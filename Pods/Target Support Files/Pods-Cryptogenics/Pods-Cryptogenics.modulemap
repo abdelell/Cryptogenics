@@ -1,0 +1,6 @@
+framework module Pods_Cryptogenics {
+  umbrella header "Pods-Cryptogenics-umbrella.h"
+
+  export *
+  module * { export * }
+}
