@@ -6,5 +6,6 @@ target 'Cryptogenics' do
   use_frameworks!
 
   # Pods for Cryptogenics
+  pod 'Introspect'
 
 end

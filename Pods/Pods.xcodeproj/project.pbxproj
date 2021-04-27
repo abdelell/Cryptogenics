@@ -7,40 +7,120 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36B30B7945E7785206216C6C42512FB8 /* Pods-Cryptogenics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49FD843487AEF47D1F8A4A8B99008CA2 /* Pods-Cryptogenics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A325539F023B90156439324D2859A9E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E1F5305E713512DC7E494FD90436ED42 /* Pods-Cryptogenics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1300F843E080C1BCB6AA1F658DAF46D7 /* Pods-Cryptogenics-dummy.m */; };
+		04516B10D23612F1EF169D07F5E5D412 /* AppKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */; };
+		11764697E09F25872A1EEC92A0913EE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		26A76676C1314B46DF5F1F1313ABE2F4 /* Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */; };
+		6BAA524EFC7F45E316B4036A0169D875 /* Pods-Cryptogenics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E22B82F58CA6C5E6539FBFE1E4AE05 /* Pods-Cryptogenics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DFBFB9DA424CBE5911AD315151EFFE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A8B0DC12BE200007F9EB2D65531A84CA /* UIKitIntrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */; };
+		C8A1565F168B6F58A0CFF6EA6735BB74 /* Pods-Cryptogenics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 718F20D8D44E175BB31700E33164AE08 /* Pods-Cryptogenics-dummy.m */; };
+		CBBB3C3152D4C6E2F661C3E5E813147C /* Introspect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8DE7403B046571663D236C6905B4E52 /* UIKitIntrospectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */; };
+		DE9FE1FE2E7B9C17B1FB97C6E613DFF2 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */; };
+		FEE53BB666EC19D440243E6ED59F33CC /* Introspect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5AEA232A81A4D43148E366B8CB0617FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97E3685499568DCCBA6C15905F707BDC;
+			remoteInfo = Introspect;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		1300F843E080C1BCB6AA1F658DAF46D7 /* Pods-Cryptogenics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cryptogenics-dummy.m"; sourceTree = "<group>"; };
-		49FD843487AEF47D1F8A4A8B99008CA2 /* Pods-Cryptogenics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cryptogenics-umbrella.h"; sourceTree = "<group>"; };
-		670C3475D3AFBC3AE96D26D6995F0BFF /* Pods-Cryptogenics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cryptogenics.debug.xcconfig"; sourceTree = "<group>"; };
+		1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-umbrella.h"; sourceTree = "<group>"; };
+		1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppKitIntrospectionView.swift; path = Introspect/AppKitIntrospectionView.swift; sourceTree = "<group>"; };
+		2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionView.swift; path = Introspect/UIKitIntrospectionView.swift; sourceTree = "<group>"; };
+		3DF18865B218BCE5D62D0C436F575AFE /* Introspect-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-prefix.pch"; sourceTree = "<group>"; };
+		4A1486057F9EA671A0519DC5586725A8 /* Pods-Cryptogenics-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cryptogenics-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59E22B82F58CA6C5E6539FBFE1E4AE05 /* Pods-Cryptogenics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cryptogenics-umbrella.h"; sourceTree = "<group>"; };
+		6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Introspect/ViewExtensions.swift; sourceTree = "<group>"; };
+		718F20D8D44E175BB31700E33164AE08 /* Pods-Cryptogenics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cryptogenics-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7517B2EE03328FF9C01437F44EDF5C49 /* Pods-Cryptogenics-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cryptogenics-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C3EC726361CA4C103D36C472771C896 /* Pods-Cryptogenics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cryptogenics-Info.plist"; sourceTree = "<group>"; };
+		776F61E3C3DAB628B2B3232837C5CA05 /* Pods-Cryptogenics-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cryptogenics-frameworks.sh"; sourceTree = "<group>"; };
+		77C0CBC9287733E83F27B3E7E14CB9FE /* Pods-Cryptogenics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cryptogenics.debug.xcconfig"; sourceTree = "<group>"; };
+		7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.release.xcconfig; sourceTree = "<group>"; };
+		85117F513D7ADB4FB8124C3E5E9EA3E7 /* Pods-Cryptogenics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cryptogenics-Info.plist"; sourceTree = "<group>"; };
+		8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitIntrospectionViewController.swift; path = Introspect/UIKitIntrospectionViewController.swift; sourceTree = "<group>"; };
+		90340D652D366F044131958DB5DEBE02 /* Pods-Cryptogenics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cryptogenics.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A981CEFAFBA2EB6D58380A25CBF7B159 /* Pods-Cryptogenics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cryptogenics.modulemap"; sourceTree = "<group>"; };
-		D072CCB65608A8D8EE6959EDE18AFB50 /* Pods-Cryptogenics-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cryptogenics-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E2F533AA042A8911E47C3812430B19C4 /* Pods-Cryptogenics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cryptogenics.release.xcconfig"; sourceTree = "<group>"; };
+		A3E219E54C44AB926A06649A0B160019 /* Pods-Cryptogenics-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cryptogenics-acknowledgements.plist"; sourceTree = "<group>"; };
+		A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Introspect-dummy.m"; sourceTree = "<group>"; };
+		B12B06B4D8ECF6FEFBFCD696F9C95BD3 /* Pods-Cryptogenics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cryptogenics.modulemap"; sourceTree = "<group>"; };
+		C16A57B7BAC12B839B47B64EA86CB745 /* Introspect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Introspect-Info.plist"; sourceTree = "<group>"; };
+		C6935A6B76A1F3ACA7781AE41385A149 /* Introspect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Introspect.modulemap; sourceTree = "<group>"; };
+		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Introspect.framework; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.debug.xcconfig; sourceTree = "<group>"; };
 		EB162865F80179C840A090236BAC3036 /* Pods_Cryptogenics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cryptogenics.framework; path = "Pods-Cryptogenics.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Introspect.swift; path = Introspect/Introspect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9ACCD762FFA0AE8C0E1127DAFFB537B9 /* Frameworks */ = {
+		31FA779C2E2C1439F386AC99AEC8D9FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A325539F023B90156439324D2859A9E8 /* Foundation.framework in Frameworks */,
+				11764697E09F25872A1EEC92A0913EE1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEF964766E6D139FD8A073FD6D6D9CF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DFBFB9DA424CBE5911AD315151EFFE5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		538DB9838CB5C419BEBC0709E155B436 /* Products */ = {
+		0DC0F232008029355AE3151704CDE4BA /* Pods-Cryptogenics */ = {
 			isa = PBXGroup;
 			children = (
+				B12B06B4D8ECF6FEFBFCD696F9C95BD3 /* Pods-Cryptogenics.modulemap */,
+				4A1486057F9EA671A0519DC5586725A8 /* Pods-Cryptogenics-acknowledgements.markdown */,
+				A3E219E54C44AB926A06649A0B160019 /* Pods-Cryptogenics-acknowledgements.plist */,
+				718F20D8D44E175BB31700E33164AE08 /* Pods-Cryptogenics-dummy.m */,
+				776F61E3C3DAB628B2B3232837C5CA05 /* Pods-Cryptogenics-frameworks.sh */,
+				85117F513D7ADB4FB8124C3E5E9EA3E7 /* Pods-Cryptogenics-Info.plist */,
+				59E22B82F58CA6C5E6539FBFE1E4AE05 /* Pods-Cryptogenics-umbrella.h */,
+				77C0CBC9287733E83F27B3E7E14CB9FE /* Pods-Cryptogenics.debug.xcconfig */,
+				90340D652D366F044131958DB5DEBE02 /* Pods-Cryptogenics.release.xcconfig */,
+			);
+			name = "Pods-Cryptogenics";
+			path = "Target Support Files/Pods-Cryptogenics";
+			sourceTree = "<group>";
+		};
+		20C24BE28A8BC1948F8DA34D666339A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51CA0CEB90A680AD71900D5AB951F5AE /* Introspect */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		51CA0CEB90A680AD71900D5AB951F5AE /* Introspect */ = {
+			isa = PBXGroup;
+			children = (
+				1FEB0B7659B3CBF3514D1FC9567D4F80 /* AppKitIntrospectionView.swift */,
+				EE9F97B7DBE7B5E51378241115EFD843 /* Introspect.swift */,
+				2FD39E502C826E5A7C5BAF30974FAEBB /* UIKitIntrospectionView.swift */,
+				8642AA28CFA4B0B137E3325D9FC24B36 /* UIKitIntrospectionViewController.swift */,
+				6519D1DDA6EB4B5EE3D38A3A0A7649DC /* ViewExtensions.swift */,
+				E74A7A19A59A269AF211D6D7D445E878 /* Support Files */,
+			);
+			name = Introspect;
+			path = Introspect;
+			sourceTree = "<group>";
+		};
+		573A5813DE2B3B1B3FE8632CFC2F382A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */,
 				EB162865F80179C840A090236BAC3036 /* Pods_Cryptogenics.framework */,
 			);
 			name = Products;
@@ -54,13 +134,22 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		6774792E979B8932DC413DE02A843369 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DC0F232008029355AE3151704CDE4BA /* Pods-Cryptogenics */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				538DB9838CB5C419BEBC0709E155B436 /* Products */,
-				E4785369B49516AB1600956B5A42027E /* Targets Support Files */,
+				20C24BE28A8BC1948F8DA34D666339A7 /* Pods */,
+				573A5813DE2B3B1B3FE8632CFC2F382A /* Products */,
+				6774792E979B8932DC413DE02A843369 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,56 +161,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4785369B49516AB1600956B5A42027E /* Targets Support Files */ = {
+		E74A7A19A59A269AF211D6D7D445E878 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F3F857702D84F58213D16A5D914563A7 /* Pods-Cryptogenics */,
+				C6935A6B76A1F3ACA7781AE41385A149 /* Introspect.modulemap */,
+				A7133B45DB27B49E3F6A06E50B650D08 /* Introspect-dummy.m */,
+				C16A57B7BAC12B839B47B64EA86CB745 /* Introspect-Info.plist */,
+				3DF18865B218BCE5D62D0C436F575AFE /* Introspect-prefix.pch */,
+				1B6C185AFAF683A8F8152324DD89EEDF /* Introspect-umbrella.h */,
+				D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */,
+				7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */,
 			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F3F857702D84F58213D16A5D914563A7 /* Pods-Cryptogenics */ = {
-			isa = PBXGroup;
-			children = (
-				A981CEFAFBA2EB6D58380A25CBF7B159 /* Pods-Cryptogenics.modulemap */,
-				D072CCB65608A8D8EE6959EDE18AFB50 /* Pods-Cryptogenics-acknowledgements.markdown */,
-				7517B2EE03328FF9C01437F44EDF5C49 /* Pods-Cryptogenics-acknowledgements.plist */,
-				1300F843E080C1BCB6AA1F658DAF46D7 /* Pods-Cryptogenics-dummy.m */,
-				9C3EC726361CA4C103D36C472771C896 /* Pods-Cryptogenics-Info.plist */,
-				49FD843487AEF47D1F8A4A8B99008CA2 /* Pods-Cryptogenics-umbrella.h */,
-				670C3475D3AFBC3AE96D26D6995F0BFF /* Pods-Cryptogenics.debug.xcconfig */,
-				E2F533AA042A8911E47C3812430B19C4 /* Pods-Cryptogenics.release.xcconfig */,
-			);
-			name = "Pods-Cryptogenics";
-			path = "Target Support Files/Pods-Cryptogenics";
+			name = "Support Files";
+			path = "../Target Support Files/Introspect";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		107B12EF8607092B69C0F391A912BEE1 /* Headers */ = {
+		58148D309A653F03AD509D7679FF2E5B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B30B7945E7785206216C6C42512FB8 /* Pods-Cryptogenics-umbrella.h in Headers */,
+				6BAA524EFC7F45E316B4036A0169D875 /* Pods-Cryptogenics-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4A87CCF965CA6A18F5C4D219FBD897B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBBB3C3152D4C6E2F661C3E5E813147C /* Introspect-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F1B6538B7E8654BC8BDB52DA7CC68A5E /* Pods-Cryptogenics */ = {
+		97E3685499568DCCBA6C15905F707BDC /* Introspect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 404922C06E5F42AB584490C12873975C /* Build configuration list for PBXNativeTarget "Pods-Cryptogenics" */;
+			buildConfigurationList = 16B9305882DF4E5359A9C88CFB34D3D7 /* Build configuration list for PBXNativeTarget "Introspect" */;
 			buildPhases = (
-				107B12EF8607092B69C0F391A912BEE1 /* Headers */,
-				21CD5D0BC39BA22E4FA501BD70763566 /* Sources */,
-				9ACCD762FFA0AE8C0E1127DAFFB537B9 /* Frameworks */,
-				C93797E3BCC45F81800BD4C841F642F7 /* Resources */,
+				C4A87CCF965CA6A18F5C4D219FBD897B /* Headers */,
+				EDC774157FF0F74DA662C65D8D058FEF /* Sources */,
+				31FA779C2E2C1439F386AC99AEC8D9FC /* Frameworks */,
+				0CF6844CDBF49121C460836A8676E396 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Introspect;
+			productName = Introspect;
+			productReference = D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1B6538B7E8654BC8BDB52DA7CC68A5E /* Pods-Cryptogenics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DBE71E69473F82A79843D0F8AF8241C /* Build configuration list for PBXNativeTarget "Pods-Cryptogenics" */;
+			buildPhases = (
+				58148D309A653F03AD509D7679FF2E5B /* Headers */,
+				8D54BBEB537A5F247A348F4ED4ADFBA1 /* Sources */,
+				BEF964766E6D139FD8A073FD6D6D9CF3 /* Frameworks */,
+				00794B9A8A02F341E5B87EE9C9D4E0BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E279CD3B21342BBC792F0C2F20ECA03E /* PBXTargetDependency */,
 			);
 			name = "Pods-Cryptogenics";
 			productName = "Pods-Cryptogenics";
@@ -146,17 +253,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 538DB9838CB5C419BEBC0709E155B436 /* Products */;
+			productRefGroup = 573A5813DE2B3B1B3FE8632CFC2F382A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				97E3685499568DCCBA6C15905F707BDC /* Introspect */,
 				F1B6538B7E8654BC8BDB52DA7CC68A5E /* Pods-Cryptogenics */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C93797E3BCC45F81800BD4C841F642F7 /* Resources */ = {
+		00794B9A8A02F341E5B87EE9C9D4E0BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CF6844CDBF49121C460836A8676E396 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,20 +281,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		21CD5D0BC39BA22E4FA501BD70763566 /* Sources */ = {
+		8D54BBEB537A5F247A348F4ED4ADFBA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F5305E713512DC7E494FD90436ED42 /* Pods-Cryptogenics-dummy.m in Sources */,
+				C8A1565F168B6F58A0CFF6EA6735BB74 /* Pods-Cryptogenics-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC774157FF0F74DA662C65D8D058FEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04516B10D23612F1EF169D07F5E5D412 /* AppKitIntrospectionView.swift in Sources */,
+				FEE53BB666EC19D440243E6ED59F33CC /* Introspect-dummy.m in Sources */,
+				26A76676C1314B46DF5F1F1313ABE2F4 /* Introspect.swift in Sources */,
+				A8B0DC12BE200007F9EB2D65531A84CA /* UIKitIntrospectionView.swift in Sources */,
+				D8DE7403B046571663D236C6905B4E52 /* UIKitIntrospectionViewController.swift in Sources */,
+				DE9FE1FE2E7B9C17B1FB97C6E613DFF2 /* ViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E279CD3B21342BBC792F0C2F20ECA03E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Introspect;
+			target = 97E3685499568DCCBA6C15905F707BDC /* Introspect */;
+			targetProxy = 5AEA232A81A4D43148E366B8CB0617FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		474522D1255208FF853EA436B09EBAFE /* Debug */ = {
+		46875DC42D51E45B1E976CD0EBFA7BC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 670C3475D3AFBC3AE96D26D6995F0BFF /* Pods-Cryptogenics.debug.xcconfig */;
+			baseConfigurationReference = 77C0CBC9287733E83F27B3E7E14CB9FE /* Pods-Cryptogenics.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -342,9 +479,80 @@
 			};
 			name = Debug;
 		};
-		E22C85C56D20F44C64379B2C5C9598AB /* Release */ = {
+		890D8A8EE29D9796F998FE27B08100F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2F533AA042A8911E47C3812430B19C4 /* Pods-Cryptogenics.release.xcconfig */;
+			baseConfigurationReference = 7FA8350B21394CC67B4C811628A647AB /* Introspect.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Introspect/Introspect.modulemap";
+				PRODUCT_MODULE_NAME = Introspect;
+				PRODUCT_NAME = Introspect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C2FEEF7BEE72A264ECF59D4A85DB9467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1119A951EC43052081C7A9A0544F754 /* Introspect.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Introspect/Introspect.modulemap";
+				PRODUCT_MODULE_NAME = Introspect;
+				PRODUCT_NAME = Introspect;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F6FC14728C7E1E65B7419A8FFBE7654A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90340D652D366F044131958DB5DEBE02 /* Pods-Cryptogenics.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -383,11 +591,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		404922C06E5F42AB584490C12873975C /* Build configuration list for PBXNativeTarget "Pods-Cryptogenics" */ = {
+		16B9305882DF4E5359A9C88CFB34D3D7 /* Build configuration list for PBXNativeTarget "Introspect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				474522D1255208FF853EA436B09EBAFE /* Debug */,
-				E22C85C56D20F44C64379B2C5C9598AB /* Release */,
+				C2FEEF7BEE72A264ECF59D4A85DB9467 /* Debug */,
+				890D8A8EE29D9796F998FE27B08100F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -397,6 +605,15 @@
 			buildConfigurations = (
 				75D70EEEA0A456E14F7338A7F342964E /* Debug */,
 				71243899B61152433AAE34EE86456EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DBE71E69473F82A79843D0F8AF8241C /* Build configuration list for PBXNativeTarget "Pods-Cryptogenics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46875DC42D51E45B1E976CD0EBFA7BC4 /* Debug */,
+				F6FC14728C7E1E65B7419A8FFBE7654A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
