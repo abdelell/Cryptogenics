@@ -52,9 +52,3 @@ struct PercentChange: View {
     }
     
 }
-
-//struct CoinListRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CoinListRow(coin: Coin()
-//    }
-//}

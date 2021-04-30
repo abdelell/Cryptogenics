@@ -56,9 +56,10 @@ struct AddTokenView: View {
                         }) {
                             Text("Paste")
                                 .foregroundColor(.blue)
+                                .padding(5)
                         }
                         .alert(isPresented: $showInvalidAddressAlert, content: {
-                            Alert(title: Text("Invalid Token Address..."))
+                            Alert(title: Text("Invalid Token Address."))
                         })
                     }
                     .frame(width: geometry.size.width * 0.8)

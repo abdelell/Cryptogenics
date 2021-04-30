@@ -18,7 +18,7 @@ struct HomeView: View {
                     
                     VStack {
                         PullToRefresh(coordinateSpaceName: "pullToRefresh") {
-                            apiCall().getCoins { (coins) in
+                            CoinViewModel().getCoins { (coins) in
                                 self.coinManager.coins = coins
                             }
                         }
@@ -50,7 +50,7 @@ struct HomeView: View {
                     }
                 }
                 .onAppear() {
-                    apiCall().getCoins { (coins) in
+                    CoinViewModel().getCoins { (coins) in
                         self.coinManager.coins = coins
                     }
                 }

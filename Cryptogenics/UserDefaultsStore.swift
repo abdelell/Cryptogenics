@@ -32,7 +32,7 @@ class UserDefaultsStore {
                 group.enter()
 
             
-            apiCall().getCoin(contractAddress: contractAddress) { result in
+            CoinViewModel().getCoin(contractAddress: contractAddress) { result in
                 switch result {
                 case .success(let coin):
                     var newArray = getContractAddresses()

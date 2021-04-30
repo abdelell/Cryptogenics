@@ -40,9 +40,11 @@ struct Coin: Identifiable {
     
     func repeater(string: String, withNumber number: Int) -> String {
         var repeatedString = String()
-        for i in 0..<number {
+        
+        for _ in 0..<number {
             repeatedString += string
         }
+        
         return repeatedString
     }
 }

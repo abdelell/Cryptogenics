@@ -7,7 +7,7 @@
 
 import Foundation
 
-class apiCall {
+class CoinViewModel {
     
     enum NetworkError: Error {
         case badURL
@@ -56,7 +56,7 @@ class apiCall {
 
     }
     
-    func getCoin(contractAddress: String, completion:@escaping (Result<Coin, NetworkError>) -> ()) {
+    public func getCoin(contractAddress: String, completion:@escaping (Result<Coin, NetworkError>) -> ()) {
         guard let url = URL(string: "https://api.dex.guru/v1/tokens/\(contractAddress)-bsc") else {
             completion(.failure(.badURL))
             return
@@ -78,7 +78,7 @@ class apiCall {
                             swap: coinJSON.AMM,
                             network: coinJSON.network)
             
-            print(coin)
+//            print(coin)
             
             DispatchQueue.main.async {
                 completion(.success(coin))

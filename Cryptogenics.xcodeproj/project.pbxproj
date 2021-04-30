@@ -39,6 +39,7 @@
 		CE70284D26367D9100E10784 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		CE702850263683E800E10784 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CE7028532636A2DF00E10784 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cryptogenics.entitlements; sourceTree = "<group>"; };
 		CEA41680263298800095EB37 /* CoinListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRow.swift; sourceTree = "<group>"; };
 		CEA416842632C7EB0095EB37 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		CEA416872632CE270095EB37 /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
@@ -77,10 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				CE4E1CB2262AA71900743F61 /* HomeView.swift */,
-				CE7028532636A2DF00E10784 /* CoinManager.swift */,
-				CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */,
-				CE702849263671EC00E10784 /* TokenAddedView.swift */,
 				CEA41680263298800095EB37 /* CoinListRow.swift */,
+				CE7028532636A2DF00E10784 /* CoinManager.swift */,
+				CE7028572637E6FB00E10784 /* AddToken */,
 				CEA416842632C7EB0095EB37 /* Coin.swift */,
 				CEA416872632CE270095EB37 /* CoinsViewModel.swift */,
 			);
@@ -90,10 +90,20 @@
 		CE70284C26367D8200E10784 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE7028432636504E00E10784 /* PullToRefresh.swift */,
 				CE70284D26367D9100E10784 /* HUDProgressView.swift */,
 				CE702850263683E800E10784 /* BlurView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CE7028572637E6FB00E10784 /* AddToken */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */,
+				CE702849263671EC00E10784 /* TokenAddedView.swift */,
+			);
+			path = AddToken;
 			sourceTree = "<group>";
 		};
 		CEC5A052262A95700025C74B = {
@@ -117,10 +127,10 @@
 		CEC5A05D262A95700025C74B /* Cryptogenics */ = {
 			isa = PBXGroup;
 			children = (
+				CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */,
 				CEC5A05E262A95700025C74B /* AppDelegate.swift */,
 				CEC5A060262A95700025C74B /* SceneDelegate.swift */,
 				CEC5A062262A95700025C74B /* Colors.swift */,
-				CE7028432636504E00E10784 /* PullToRefresh.swift */,
 				CE70284626365DD800E10784 /* UserDefaultsStore.swift */,
 				CE70284C26367D8200E10784 /* App */,
 				CE4E1CB1262AA6D700743F61 /* Home */,
@@ -415,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cryptogenics/Cryptogenics.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryptogenics/Preview Content\"";
 				DEVELOPMENT_TEAM = P3344464PB;
@@ -437,6 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cryptogenics/Cryptogenics.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Cryptogenics/Preview Content\"";
 				DEVELOPMENT_TEAM = P3344464PB;

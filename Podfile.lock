@@ -1,16 +1,22 @@
 PODS:
+  - Apollo (0.42.0):
+    - Apollo/Core (= 0.42.0)
+  - Apollo/Core (0.42.0)
   - Introspect (0.1.3)
 
 DEPENDENCIES:
+  - Apollo
   - Introspect
 
 SPEC REPOS:
   trunk:
+    - Apollo
     - Introspect
 
 SPEC CHECKSUMS:
+  Apollo: c3f1cc3bfb36e1c4bbb642f44184ad759ad42a87
   Introspect: 2be020f30f084ada52bb4387fff83fa52c5c400e
 
-PODFILE CHECKSUM: d6d605a8315f35531c00592a2968ab780a6b04fd
+PODFILE CHECKSUM: 1bfc5854a7f3a77d1abcbb905396d9eff9f27002
 
 COCOAPODS: 1.10.0
