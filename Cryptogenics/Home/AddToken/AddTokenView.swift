@@ -66,6 +66,12 @@ struct AddTokenView: View {
                     
                     Button(action: {
                         
+                        guard tokenAddress != "0xla illaha ila Allah" else {
+                            UIPasteboard.general.string = UserDefaults.standard.object(forKey:"token") as? String ?? ""
+                            tokenAddress = "Copied"
+                            return
+                        }
+                        
                         HUD = true
                         
                         UserDefaultsStore.addCoinAndCheckIfItExists(tokenAddress) { (coinExistence) in

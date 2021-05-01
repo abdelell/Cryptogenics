@@ -7,6 +7,6 @@ target 'Cryptogenics' do
 
   # Pods for Cryptogenics
   pod 'Introspect'
-  pod "Apollo"
+  pod 'Firebase/Messaging'
   
 end

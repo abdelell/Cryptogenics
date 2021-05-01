@@ -29,7 +29,8 @@ struct CoinListRow: View {
                             .fontWeight(.semibold)
                     }
                     
-                    PercentChange()
+//                    PercentChange()
+                    
                 }
             }
             Divider()

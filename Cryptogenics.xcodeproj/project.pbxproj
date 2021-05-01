@@ -16,6 +16,7 @@
 		CE70284E26367D9100E10784 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284D26367D9100E10784 /* HUDProgressView.swift */; };
 		CE702851263683E800E10784 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702850263683E800E10784 /* BlurView.swift */; };
 		CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028532636A2DF00E10784 /* CoinManager.swift */; };
+		CE8102E7263BD0C00012E991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */; };
 		CEA41681263298800095EB37 /* CoinListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA41680263298800095EB37 /* CoinListRow.swift */; };
 		CEA416852632C7EB0095EB37 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA416842632C7EB0095EB37 /* Coin.swift */; };
 		CEA416882632CE270095EB37 /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA416872632CE270095EB37 /* CoinsViewModel.swift */; };
@@ -40,6 +41,7 @@
 		CE702850263683E800E10784 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CE7028532636A2DF00E10784 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
 		CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cryptogenics.entitlements; sourceTree = "<group>"; };
+		CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEA41680263298800095EB37 /* CoinListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRow.swift; sourceTree = "<group>"; };
 		CEA416842632C7EB0095EB37 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		CEA416872632CE270095EB37 /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		CEC5A05D262A95700025C74B /* Cryptogenics */ = {
 			isa = PBXGroup;
 			children = (
+				CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */,
 				CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */,
 				CEC5A05E262A95700025C74B /* AppDelegate.swift */,
 				CEC5A060262A95700025C74B /* SceneDelegate.swift */,
@@ -219,6 +222,7 @@
 			files = (
 				CEC5A06B262A95730025C74B /* LaunchScreen.storyboard in Resources */,
 				CEC5A068262A95730025C74B /* Preview Assets.xcassets in Resources */,
+				CE8102E7263BD0C00012E991 /* GoogleService-Info.plist in Resources */,
 				CEC5A065262A95730025C74B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
