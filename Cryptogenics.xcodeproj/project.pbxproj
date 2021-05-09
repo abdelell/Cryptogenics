@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		931F54423AC3E7BF2F5E895C /* Pods_Cryptogenics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F16389DC3060187E44E73EF /* Pods_Cryptogenics.framework */; };
 		CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */; };
 		CE4E1CB3262AA71900743F61 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1CB2262AA71900743F61 /* HomeView.swift */; };
 		CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028432636504E00E10784 /* PullToRefresh.swift */; };
@@ -16,22 +15,35 @@
 		CE70284E26367D9100E10784 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284D26367D9100E10784 /* HUDProgressView.swift */; };
 		CE702851263683E800E10784 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702850263683E800E10784 /* BlurView.swift */; };
 		CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028532636A2DF00E10784 /* CoinManager.swift */; };
+		CE773AE0263EDD5100F2DF42 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE773ADF263EDD5100F2DF42 /* FirebaseFirestore */; };
+		CE773AE2263EDD5100F2DF42 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE773AE1263EDD5100F2DF42 /* FirebaseMessaging */; };
+		CE773AE926412D5800F2DF42 /* PriceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773AE826412D5800F2DF42 /* PriceAlert.swift */; };
+		CE773AEE2642A0D500F2DF42 /* AlertOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773AED2642A0D500F2DF42 /* AlertOption.swift */; };
 		CE8102E7263BD0C00012E991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */; };
-		CEA41681263298800095EB37 /* CoinListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA41680263298800095EB37 /* CoinListRow.swift */; };
+		CE8102EF263CF8690012E991 /* PriceAlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8102EE263CF8690012E991 /* PriceAlertItem.swift */; };
+		CE8102F2263CF8CE0012E991 /* PriceAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8102F1263CF8CE0012E991 /* PriceAlertView.swift */; };
+		CE8102F7263D00670012E991 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8102F6263D00670012E991 /* TabBarView.swift */; };
+		CE964453264304DA004F3F3B /* BackgroundDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE964452264304DA004F3F3B /* BackgroundDismissButton.swift */; };
+		CEA41681263298800095EB37 /* CoinRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA41680263298800095EB37 /* CoinRow.swift */; };
 		CEA416852632C7EB0095EB37 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA416842632C7EB0095EB37 /* Coin.swift */; };
-		CEA416882632CE270095EB37 /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA416872632CE270095EB37 /* CoinsViewModel.swift */; };
+		CEA416882632CE270095EB37 /* CoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA416872632CE270095EB37 /* CoinViewModel.swift */; };
 		CEC5A05F262A95700025C74B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A05E262A95700025C74B /* AppDelegate.swift */; };
 		CEC5A061262A95700025C74B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A060262A95700025C74B /* SceneDelegate.swift */; };
 		CEC5A063262A95700025C74B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A062262A95700025C74B /* Colors.swift */; };
 		CEC5A065262A95730025C74B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A064262A95730025C74B /* Assets.xcassets */; };
 		CEC5A068262A95730025C74B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A067262A95730025C74B /* Preview Assets.xcassets */; };
 		CEC5A06B262A95730025C74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A069262A95730025C74B /* LaunchScreen.storyboard */; };
+		CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5C62643782B00000B3E /* XDismissButton.swift */; };
+		CED2A5CA2643798900000B3E /* PopupTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5C92643798900000B3E /* PopupTitle.swift */; };
+		CED2A5CD26437F3F00000B3E /* PopupSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */; };
+		CED2A5D12643838600000B3E /* AddPriceAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5D02643838600000B3E /* AddPriceAlertView.swift */; };
+		CED2A5D52643B3A600000B3E /* PriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */; };
+		CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */; };
+		CED2A5DF2643D44D00000B3E /* AlertOptionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */; };
+		CED2A5E2264557D000000B3E /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5E1264557CF00000B3E /* Delete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17493E3E3879C3F3F813B7F7 /* Pods-Cryptogenics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cryptogenics.release.xcconfig"; path = "Target Support Files/Pods-Cryptogenics/Pods-Cryptogenics.release.xcconfig"; sourceTree = "<group>"; };
-		17EF5FE47733F747B3789060 /* Pods-Cryptogenics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cryptogenics.debug.xcconfig"; path = "Target Support Files/Pods-Cryptogenics/Pods-Cryptogenics.debug.xcconfig"; sourceTree = "<group>"; };
-		9F16389DC3060187E44E73EF /* Pods_Cryptogenics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryptogenics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenView.swift; sourceTree = "<group>"; };
 		CE4E1CB2262AA71900743F61 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE7028432636504E00E10784 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
@@ -40,11 +52,17 @@
 		CE70284D26367D9100E10784 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		CE702850263683E800E10784 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CE7028532636A2DF00E10784 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		CE773AE826412D5800F2DF42 /* PriceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlert.swift; sourceTree = "<group>"; };
+		CE773AED2642A0D500F2DF42 /* AlertOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOption.swift; sourceTree = "<group>"; };
 		CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cryptogenics.entitlements; sourceTree = "<group>"; };
 		CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEA41680263298800095EB37 /* CoinListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRow.swift; sourceTree = "<group>"; };
+		CE8102EE263CF8690012E991 /* PriceAlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertItem.swift; sourceTree = "<group>"; };
+		CE8102F1263CF8CE0012E991 /* PriceAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertView.swift; sourceTree = "<group>"; };
+		CE8102F6263D00670012E991 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		CE964452264304DA004F3F3B /* BackgroundDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDismissButton.swift; sourceTree = "<group>"; };
+		CEA41680263298800095EB37 /* CoinRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRow.swift; sourceTree = "<group>"; };
 		CEA416842632C7EB0095EB37 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		CEA416872632CE270095EB37 /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
+		CEA416872632CE270095EB37 /* CoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModel.swift; sourceTree = "<group>"; };
 		CEC5A05B262A95700025C74B /* Cryptogenics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptogenics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC5A05E262A95700025C74B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC5A060262A95700025C74B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +71,14 @@
 		CEC5A067262A95730025C74B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEC5A06A262A95730025C74B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC5A06C262A95730025C74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED2A5C62643782B00000B3E /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		CED2A5C92643798900000B3E /* PopupTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTitle.swift; sourceTree = "<group>"; };
+		CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSubmitButton.swift; sourceTree = "<group>"; };
+		CED2A5D02643838600000B3E /* AddPriceAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPriceAlertView.swift; sourceTree = "<group>"; };
+		CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertViewModel.swift; sourceTree = "<group>"; };
+		CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
+		CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOptionsMenuView.swift; sourceTree = "<group>"; };
+		CED2A5E1264557CF00000B3E /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				931F54423AC3E7BF2F5E895C /* Pods_Cryptogenics.framework in Frameworks */,
+				CE773AE2263EDD5100F2DF42 /* FirebaseMessaging in Frameworks */,
+				CE773AE0263EDD5100F2DF42 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +97,6 @@
 		129CDEAAC5591617B927B55C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17EF5FE47733F747B3789060 /* Pods-Cryptogenics.debug.xcconfig */,
-				17493E3E3879C3F3F813B7F7 /* Pods-Cryptogenics.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -80,23 +105,25 @@
 			isa = PBXGroup;
 			children = (
 				CE4E1CB2262AA71900743F61 /* HomeView.swift */,
-				CEA41680263298800095EB37 /* CoinListRow.swift */,
+				CEA41680263298800095EB37 /* CoinRow.swift */,
 				CE7028532636A2DF00E10784 /* CoinManager.swift */,
 				CE7028572637E6FB00E10784 /* AddToken */,
 				CEA416842632C7EB0095EB37 /* Coin.swift */,
-				CEA416872632CE270095EB37 /* CoinsViewModel.swift */,
+				CEA416872632CE270095EB37 /* CoinViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CE70284C26367D8200E10784 /* App */ = {
+		CE70284C26367D8200E10784 /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
 				CE7028432636504E00E10784 /* PullToRefresh.swift */,
 				CE70284D26367D9100E10784 /* HUDProgressView.swift */,
 				CE702850263683E800E10784 /* BlurView.swift */,
+				CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */,
+				CED2A5C42643780700000B3E /* PopupView */,
 			);
-			path = App;
+			path = SharedViews;
 			sourceTree = "<group>";
 		};
 		CE7028572637E6FB00E10784 /* AddToken */ = {
@@ -108,13 +135,55 @@
 			path = AddToken;
 			sourceTree = "<group>";
 		};
+		CE773AE426412D0500F2DF42 /* AddPriceAlert */ = {
+			isa = PBXGroup;
+			children = (
+				CED2A5D02643838600000B3E /* AddPriceAlertView.swift */,
+				CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */,
+			);
+			path = AddPriceAlert;
+			sourceTree = "<group>";
+		};
+		CE8102EB263CF81C0012E991 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */,
+				CEC5A05E262A95700025C74B /* AppDelegate.swift */,
+				CEC5A060262A95700025C74B /* SceneDelegate.swift */,
+				CEC5A062262A95700025C74B /* Colors.swift */,
+				CE70284626365DD800E10784 /* UserDefaultsStore.swift */,
+				CED2A5E1264557CF00000B3E /* Delete.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CE8102ED263CF8480012E991 /* PriceAlert */ = {
+			isa = PBXGroup;
+			children = (
+				CE8102F1263CF8CE0012E991 /* PriceAlertView.swift */,
+				CE8102EE263CF8690012E991 /* PriceAlertItem.swift */,
+				CE773AE826412D5800F2DF42 /* PriceAlert.swift */,
+				CE773AE426412D0500F2DF42 /* AddPriceAlert */,
+				CE773AED2642A0D500F2DF42 /* AlertOption.swift */,
+				CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */,
+			);
+			path = PriceAlert;
+			sourceTree = "<group>";
+		};
+		CE8102F5263D001D0012E991 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8102F6263D00670012E991 /* TabBarView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		CEC5A052262A95700025C74B = {
 			isa = PBXGroup;
 			children = (
 				CEC5A05D262A95700025C74B /* Cryptogenics */,
 				CEC5A05C262A95700025C74B /* Products */,
 				129CDEAAC5591617B927B55C /* Pods */,
-				EB9847842E807D08E4C7A3F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,14 +198,12 @@
 		CEC5A05D262A95700025C74B /* Cryptogenics */ = {
 			isa = PBXGroup;
 			children = (
-				CE8102E6263BD0C00012E991 /* GoogleService-Info.plist */,
 				CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */,
-				CEC5A05E262A95700025C74B /* AppDelegate.swift */,
-				CEC5A060262A95700025C74B /* SceneDelegate.swift */,
-				CEC5A062262A95700025C74B /* Colors.swift */,
-				CE70284626365DD800E10784 /* UserDefaultsStore.swift */,
-				CE70284C26367D8200E10784 /* App */,
+				CE8102EB263CF81C0012E991 /* Shared */,
+				CE70284C26367D8200E10784 /* SharedViews */,
+				CE8102F5263D001D0012E991 /* TabView */,
 				CE4E1CB1262AA6D700743F61 /* Home */,
+				CE8102ED263CF8480012E991 /* PriceAlert */,
 				CEC5A069262A95730025C74B /* LaunchScreen.storyboard */,
 				CEC5A064262A95730025C74B /* Assets.xcassets */,
 				CEC5A06C262A95730025C74B /* Info.plist */,
@@ -153,12 +220,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EB9847842E807D08E4C7A3F5 /* Frameworks */ = {
+		CED2A5C42643780700000B3E /* PopupView */ = {
 			isa = PBXGroup;
 			children = (
-				9F16389DC3060187E44E73EF /* Pods_Cryptogenics.framework */,
+				CE964452264304DA004F3F3B /* BackgroundDismissButton.swift */,
+				CED2A5C62643782B00000B3E /* XDismissButton.swift */,
+				CED2A5C92643798900000B3E /* PopupTitle.swift */,
+				CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */,
 			);
-			name = Frameworks;
+			path = PopupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,17 +238,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEC5A06F262A95730025C74B /* Build configuration list for PBXNativeTarget "Cryptogenics" */;
 			buildPhases = (
-				1F3A967E1E5F5EDB313E61DB /* [CP] Check Pods Manifest.lock */,
 				CEC5A057262A95700025C74B /* Sources */,
 				CEC5A058262A95700025C74B /* Frameworks */,
 				CEC5A059262A95700025C74B /* Resources */,
-				E05CA60B5CFA36AD5AA5F699 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Cryptogenics;
+			packageProductDependencies = (
+				CE773ADF263EDD5100F2DF42 /* FirebaseFirestore */,
+				CE773AE1263EDD5100F2DF42 /* FirebaseMessaging */,
+			);
 			productName = Cryptogenics;
 			productReference = CEC5A05B262A95700025C74B /* Cryptogenics.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +278,9 @@
 				Base,
 			);
 			mainGroup = CEC5A052262A95700025C74B;
+			packageReferences = (
+				CE773ADE263EDD5100F2DF42 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CEC5A05C262A95700025C74B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,65 +304,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1F3A967E1E5F5EDB313E61DB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Cryptogenics-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E05CA60B5CFA36AD5AA5F699 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Cryptogenics/Pods-Cryptogenics-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Cryptogenics/Pods-Cryptogenics-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cryptogenics/Pods-Cryptogenics-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		CEC5A057262A95700025C74B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE773AE926412D5800F2DF42 /* PriceAlert.swift in Sources */,
+				CE8102F7263D00670012E991 /* TabBarView.swift in Sources */,
 				CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */,
 				CEA416852632C7EB0095EB37 /* Coin.swift in Sources */,
-				CEA416882632CE270095EB37 /* CoinsViewModel.swift in Sources */,
+				CE773AEE2642A0D500F2DF42 /* AlertOption.swift in Sources */,
+				CEA416882632CE270095EB37 /* CoinViewModel.swift in Sources */,
+				CED2A5E2264557D000000B3E /* Delete.swift in Sources */,
 				CE70284A263671EC00E10784 /* TokenAddedView.swift in Sources */,
 				CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */,
+				CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */,
+				CE8102F2263CF8CE0012E991 /* PriceAlertView.swift in Sources */,
 				CEC5A05F262A95700025C74B /* AppDelegate.swift in Sources */,
 				CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */,
-				CEA41681263298800095EB37 /* CoinListRow.swift in Sources */,
+				CEA41681263298800095EB37 /* CoinRow.swift in Sources */,
+				CED2A5CD26437F3F00000B3E /* PopupSubmitButton.swift in Sources */,
+				CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */,
 				CE70284726365DD800E10784 /* UserDefaultsStore.swift in Sources */,
+				CED2A5D52643B3A600000B3E /* PriceAlertViewModel.swift in Sources */,
+				CE964453264304DA004F3F3B /* BackgroundDismissButton.swift in Sources */,
 				CE4E1CB3262AA71900743F61 /* HomeView.swift in Sources */,
 				CE702851263683E800E10784 /* BlurView.swift in Sources */,
+				CE8102EF263CF8690012E991 /* PriceAlertItem.swift in Sources */,
+				CED2A5DF2643D44D00000B3E /* AlertOptionsMenuView.swift in Sources */,
+				CED2A5CA2643798900000B3E /* PopupTitle.swift in Sources */,
 				CE70284E26367D9100E10784 /* HUDProgressView.swift in Sources */,
+				CED2A5D12643838600000B3E /* AddPriceAlertView.swift in Sources */,
 				CEC5A061262A95700025C74B /* SceneDelegate.swift in Sources */,
 				CEC5A063262A95700025C74B /* Colors.swift in Sources */,
 			);
@@ -425,7 +472,6 @@
 		};
 		CEC5A070262A95730025C74B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17EF5FE47733F747B3789060 /* Pods-Cryptogenics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,7 +494,6 @@
 		};
 		CEC5A071262A95730025C74B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17493E3E3879C3F3F813B7F7 /* Pods-Cryptogenics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +536,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE773ADE263EDD5100F2DF42 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE773ADF263EDD5100F2DF42 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE773ADE263EDD5100F2DF42 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CE773AE1263EDD5100F2DF42 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE773ADE263EDD5100F2DF42 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEC5A053262A95700025C74B /* Project object */;
 }

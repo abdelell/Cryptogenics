@@ -24,7 +24,7 @@ struct HomeView: View {
                         }
                         
                         ForEach(coinManager.coins) { coin in
-                            CoinListRow(coin: coin)
+                            CoinRow(coin: coin, coinManager: coinManager)
                                 .padding(.horizontal)
                         }
                         

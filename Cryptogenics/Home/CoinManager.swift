@@ -20,4 +20,8 @@ class CoinManager: ObservableObject {
     init() {
         numOfCoins = UserDefaultsStore.getContractAddresses().count
     }
+    
+    func delete(at offsets: IndexSet) {
+        coins.remove(atOffsets: offsets)
+    }
 }

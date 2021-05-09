@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MobileCoreServices
-import Introspect
 
 struct AddTokenView: View {
     @EnvironmentObject var coinManager: CoinManager
@@ -18,7 +17,7 @@ struct AddTokenView: View {
     
     @State var tokenAddress: String = ""
     @State private var swapExchange = "PancakeSwap"
-    var swapExchanges = ["PancakeSwap", "Uniswap"]
+    var swapExchanges = ["PancakeSwap"]
     
     @State var HUD = false
     
@@ -59,7 +58,7 @@ struct AddTokenView: View {
                                 .padding(5)
                         }
                         .alert(isPresented: $showInvalidAddressAlert, content: {
-                            Alert(title: Text("Invalid Token Address."))
+                            Alert(title: Text("Invalid Token Address"))
                         })
                     }
                     .frame(width: geometry.size.width * 0.8)
@@ -74,12 +73,12 @@ struct AddTokenView: View {
                         
                         HUD = true
                         
-                        UserDefaultsStore.addCoinAndCheckIfItExists(tokenAddress) { (coinExistence) in
+                        UserDefaultsStore.addCoin(tokenAddress) { (coinExistence) in
                             
                             HUD = false
                             
                             switch coinExistence {
-                            case UserDefaultsStore.CoinExistence.alreadyInWatchlist:
+                            case CoinExistence.alreadyInWatchlist:
                                 showAlreadyExistsAlert = true
                             case .addedToWatchlist(let coin):
                                 coinManager.coins.append(coin)
@@ -105,7 +104,7 @@ struct AddTokenView: View {
                     }
                     .disabled(tokenAddress.count == 0)
                     .alert(isPresented: $showAlreadyExistsAlert, content: {
-                        Alert(title: Text("Token is already in your watchlist."))
+                        Alert(title: Text("Token is already in your watchlist"))
                     })
                 }
                 .padding(.vertical, 25)

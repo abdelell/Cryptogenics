@@ -17,6 +17,8 @@ struct Coin: Identifiable {
     let priceChange24h: Double
     let swap: String
     let network: String
+    var offset: CGFloat
+    var isSwiped: Bool
     
     var formattedPrice: String {
         if Int(priceUSD) > 0 {
@@ -49,6 +51,20 @@ struct Coin: Identifiable {
     }
 }
 
+extension Coin {
+    static var sample: Coin {
+        return Coin(contractAddress: "0xa57ac35ce91ee92caefaa8dc04140c8e232c2e50-bsc",
+                    symbol: "PIT",
+                    name: "Pitbull",
+                    decimals: 9,
+                    priceUSD: 0.0000000041,
+                    priceChange24h: 0.021,
+                    swap: "pancakeswap",
+                    network: "bsc",
+                    offset: 0,
+                    isSwiped: false)
+    }
+}
 
 struct CoinJSON: Codable {
     let id: String
