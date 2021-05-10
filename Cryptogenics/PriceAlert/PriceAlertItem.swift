@@ -10,10 +10,14 @@ import SwiftUI
 struct PriceAlertItem: View {
     
     @State var priceAlert: PriceAlert
+    @State var isActive: Bool = true {
+        didSet {
+            priceAlert.isActive = isActive
+        }
+    }
     
     var body: some View {
         ZStack {
-            
             HStack {
                 Spacer()
                 
@@ -37,7 +41,7 @@ struct PriceAlertItem: View {
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
-                        Toggle("", isOn: $priceAlert.isActive)
+                        Toggle("", isOn: $isActive)
                     }
                     HStack {
                         Text("Current Price:")
@@ -53,7 +57,7 @@ struct PriceAlertItem: View {
                             .foregroundColor(.gray)
                     }
                 }
-                .opacity(priceAlert.isActive ? 1 : 0.2)
+                .opacity(isActive ? 1 : 0.2)
             }
             
             .padding()

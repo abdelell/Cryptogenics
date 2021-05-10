@@ -22,5 +22,6 @@ struct XDismissButton: View {
                 .foregroundColor(.silver)
         }
         .padding()
+        .contentShape(Rectangle())
     }
 }

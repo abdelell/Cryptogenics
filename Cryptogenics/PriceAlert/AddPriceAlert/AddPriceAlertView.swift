@@ -12,6 +12,7 @@ struct AddPriceAlertView: View {
     
     @Binding var show: Bool
     @State private var showAlreadyExistsAlert = false
+    @State private var showInvalidAddress = false
 
     @State var tokenAddress: String = ""
     @State var isTokenValid: Bool = false
@@ -33,7 +34,6 @@ struct AddPriceAlertView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-//                    .frame(width: geometry.size.width * 0.8)
 
                     HStack {
                         TextField("Token Address...", text: $tokenAddress)
@@ -45,11 +45,10 @@ struct AddPriceAlertView: View {
                                 .foregroundColor(.blue)
                                 .padding(5)
                         }
-                        .alert(isPresented: $showAlreadyExistsAlert, content: {
+                        .alert(isPresented: $showInvalidAddress, content: {
                             Alert(title: Text("Invalid Token Address"))
                         })
                     }
-//                    .frame(width: geometry.size.width * 0.8)
 
                     if isTokenValid {
                         Text("\(selectedCoin.name) - \(selectedCoin.symbol)")
@@ -135,7 +134,7 @@ struct AddPriceAlertView: View {
                         
                         .disabled(!self.isTargetValid())
                         .alert(isPresented: $showAlreadyExistsAlert, content: {
-                            Alert(title: Text("Token is already in your watchlist."))
+                            Alert(title: Text("Token is already in your watchlist"))
                         })
                     }
 
@@ -206,6 +205,7 @@ struct AddPriceAlertView: View {
                 selectedCoin = coin
             case .failure(.invalidCoin), .failure(.badURL):
                 isTokenValid = false
+                showInvalidAddress = true
             }
 
             HUD = false

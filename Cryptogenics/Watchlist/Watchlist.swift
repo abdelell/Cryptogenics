@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  Watchlist.swift
 //  Cryptogenics
 //
 //  Created by user on 4/17/21.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct Watchlist: View {
+    
     @StateObject var coinManager = CoinManager()
     @State var showAddTokenPopup = false
     
@@ -15,7 +16,6 @@ struct HomeView: View {
         ZStack {
             NavigationView {
                 ScrollView {
-                    
                     VStack {
                         PullToRefresh(coordinateSpaceName: "pullToRefresh") {
                             CoinViewModel().getCoins { (coins) in
@@ -24,7 +24,7 @@ struct HomeView: View {
                         }
                         
                         ForEach(coinManager.coins) { coin in
-                            CoinRow(coin: coin, coinManager: coinManager)
+                            CoinRow(coin: coin)
                                 .padding(.horizontal)
                         }
                         
@@ -87,6 +87,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Watchlist()
     }
 }

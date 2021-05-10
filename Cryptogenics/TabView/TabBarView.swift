@@ -16,7 +16,7 @@ struct TabBarView: View {
 
     var body: some View {
         TabView {
-            HomeView()
+            Watchlist()
                 .tabItem {
                     Image(systemName: "star")
                     Text("Watchlist")

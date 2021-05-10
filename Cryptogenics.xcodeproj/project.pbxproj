@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */; };
-		CE4E1CB3262AA71900743F61 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1CB2262AA71900743F61 /* HomeView.swift */; };
+		CE4E1CB3262AA71900743F61 /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1CB2262AA71900743F61 /* Watchlist.swift */; };
 		CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028432636504E00E10784 /* PullToRefresh.swift */; };
 		CE70284726365DD800E10784 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284626365DD800E10784 /* UserDefaultsStore.swift */; };
 		CE70284A263671EC00E10784 /* TokenAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702849263671EC00E10784 /* TokenAddedView.swift */; };
@@ -41,11 +41,14 @@
 		CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */; };
 		CED2A5DF2643D44D00000B3E /* AlertOptionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */; };
 		CED2A5E2264557D000000B3E /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5E1264557CF00000B3E /* Delete.swift */; };
+		CED2A5EA26491F9400000B3E /* CoinRowMainContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5E926491F9400000B3E /* CoinRowMainContent.swift */; };
+		CED2A5EF2649220900000B3E /* CoinRowSubContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */; };
+		CED2A5F22649737800000B3E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5F12649737800000B3E /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenView.swift; sourceTree = "<group>"; };
-		CE4E1CB2262AA71900743F61 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE4E1CB2262AA71900743F61 /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
 		CE7028432636504E00E10784 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		CE70284626365DD800E10784 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
 		CE702849263671EC00E10784 /* TokenAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddedView.swift; sourceTree = "<group>"; };
@@ -79,6 +82,9 @@
 		CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
 		CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOptionsMenuView.swift; sourceTree = "<group>"; };
 		CED2A5E1264557CF00000B3E /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
+		CED2A5E926491F9400000B3E /* CoinRowMainContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowMainContent.swift; sourceTree = "<group>"; };
+		CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowSubContent.swift; sourceTree = "<group>"; };
+		CED2A5F12649737800000B3E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,17 +107,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE4E1CB1262AA6D700743F61 /* Home */ = {
+		CE4E1CB1262AA6D700743F61 /* Watchlist */ = {
 			isa = PBXGroup;
 			children = (
-				CE4E1CB2262AA71900743F61 /* HomeView.swift */,
-				CEA41680263298800095EB37 /* CoinRow.swift */,
+				CE4E1CB2262AA71900743F61 /* Watchlist.swift */,
+				CED2A5E826491F6F00000B3E /* CoinRow */,
 				CE7028532636A2DF00E10784 /* CoinManager.swift */,
 				CE7028572637E6FB00E10784 /* AddToken */,
 				CEA416842632C7EB0095EB37 /* Coin.swift */,
 				CEA416872632CE270095EB37 /* CoinViewModel.swift */,
 			);
-			path = Home;
+			path = Watchlist;
 			sourceTree = "<group>";
 		};
 		CE70284C26367D8200E10784 /* SharedViews */ = {
@@ -202,7 +208,7 @@
 				CE8102EB263CF81C0012E991 /* Shared */,
 				CE70284C26367D8200E10784 /* SharedViews */,
 				CE8102F5263D001D0012E991 /* TabView */,
-				CE4E1CB1262AA6D700743F61 /* Home */,
+				CE4E1CB1262AA6D700743F61 /* Watchlist */,
 				CE8102ED263CF8480012E991 /* PriceAlert */,
 				CEC5A069262A95730025C74B /* LaunchScreen.storyboard */,
 				CEC5A064262A95730025C74B /* Assets.xcassets */,
@@ -229,6 +235,17 @@
 				CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */,
 			);
 			path = PopupView;
+			sourceTree = "<group>";
+		};
+		CED2A5E826491F6F00000B3E /* CoinRow */ = {
+			isa = PBXGroup;
+			children = (
+				CEA41680263298800095EB37 /* CoinRow.swift */,
+				CED2A5E926491F9400000B3E /* CoinRowMainContent.swift */,
+				CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */,
+				CED2A5F12649737800000B3E /* SafariView.swift */,
+			);
+			path = CoinRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +328,7 @@
 			files = (
 				CE773AE926412D5800F2DF42 /* PriceAlert.swift in Sources */,
 				CE8102F7263D00670012E991 /* TabBarView.swift in Sources */,
+				CED2A5EA26491F9400000B3E /* CoinRowMainContent.swift in Sources */,
 				CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */,
 				CEA416852632C7EB0095EB37 /* Coin.swift in Sources */,
 				CE773AEE2642A0D500F2DF42 /* AlertOption.swift in Sources */,
@@ -327,9 +345,11 @@
 				CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */,
 				CE70284726365DD800E10784 /* UserDefaultsStore.swift in Sources */,
 				CED2A5D52643B3A600000B3E /* PriceAlertViewModel.swift in Sources */,
+				CED2A5F22649737800000B3E /* SafariView.swift in Sources */,
 				CE964453264304DA004F3F3B /* BackgroundDismissButton.swift in Sources */,
-				CE4E1CB3262AA71900743F61 /* HomeView.swift in Sources */,
+				CE4E1CB3262AA71900743F61 /* Watchlist.swift in Sources */,
 				CE702851263683E800E10784 /* BlurView.swift in Sources */,
+				CED2A5EF2649220900000B3E /* CoinRowSubContent.swift in Sources */,
 				CE8102EF263CF8690012E991 /* PriceAlertItem.swift in Sources */,
 				CED2A5DF2643D44D00000B3E /* AlertOptionsMenuView.swift in Sources */,
 				CED2A5CA2643798900000B3E /* PopupTitle.swift in Sources */,

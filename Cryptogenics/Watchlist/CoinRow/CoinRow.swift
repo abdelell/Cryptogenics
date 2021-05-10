@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CoinRow: View {
     
+    @EnvironmentObject var coinManager: CoinManager
     @State var coin: Coin
-    @StateObject var coinManager: CoinManager
     
     var body: some View {
         ZStack {
@@ -30,29 +30,7 @@ struct CoinRow: View {
 
             }
             
-            VStack {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(coin.symbol)
-                            .font(.system(size: 18))
-                            .fontWeight(.semibold)
-                        Text(coin.name)
-                            .padding(.vertical, 1)
-                            .foregroundColor(.secondary)
-                    }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        HStack(spacing: 0) {
-                            Text("\(coin.formattedPrice)")
-                                .fontWeight(.semibold)
-                        }
-                        
-    //                    PercentChange()
-                        
-                    }
-                }
-                Divider()
-            }
+            CoinRowMainContent(coin: coin)
             .background(Color.black)
             .offset(x: coin.offset)
             .gesture(
