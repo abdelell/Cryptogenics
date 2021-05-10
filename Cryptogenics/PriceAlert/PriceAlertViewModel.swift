@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Firebase
+import FirebaseFirestore
 
 class PriceAlertViewModel: ObservableObject {
     @Published var targetPercent: String = "" {
@@ -50,6 +50,12 @@ class PriceAlertViewModel: ObservableObject {
     @Published var selectedAlertOption: AlertOption = AlertOptions.priceRisesAbove.getAlert()
     
     func addPriceAlert() {
-//        Firestore.firestore().collection("")
+        let db = Firestore.firestore()
+        db.collection("hhh").addDocument(data: [
+            "jjj": "jjjj",
+            "jj": "jj"
+        ]) { err in
+            
+        }
     }
 }

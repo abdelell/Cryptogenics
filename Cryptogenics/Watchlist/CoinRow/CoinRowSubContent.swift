@@ -10,7 +10,7 @@ import SwiftUI
 struct CoinRowSubContent: View {
     
     var coin: Coin
-    var showCopiedText: Bool = false
+    @State var showCopiedText: Bool = false
     var bscUrl: String {
         return "https://bscscan.com/token/\(coin.contractAddress)"
     }
@@ -25,6 +25,11 @@ struct CoinRowSubContent: View {
             Button(action: {
                 UIPasteboard.general.string = coin.contractAddress
                 print(coin.contractAddress)
+                
+                showCopiedText = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    showCopiedText = false
+                }
             }) {
                 VStack {
                     Text("Token Address")
@@ -34,7 +39,7 @@ struct CoinRowSubContent: View {
                         .padding(.top, 5)
                     (Text("\(coin.contractAddress) ") +
                         Text(Image(systemName: "doc.on.doc.fill")) +
-                        Text(showCopiedText ? "Copied" : ""))
+                        Text(showCopiedText ? " Copied" : ""))
                         .foregroundColor(.gray)
                         .fixedSize(horizontal: false, vertical: true)
                 }
