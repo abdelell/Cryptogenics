@@ -12,7 +12,7 @@ struct PriceAlert: Identifiable {
     let coin = Coin.sample
     let alertOption: AlertOption
     let target: Double
-    @State var isActive: Bool
+    var isActive: Bool
     var offset: CGFloat = 0
     var isSwiped: Bool = false
 }

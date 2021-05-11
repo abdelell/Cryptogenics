@@ -11,7 +11,7 @@
 		CE4E1CB3262AA71900743F61 /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1CB2262AA71900743F61 /* Watchlist.swift */; };
 		CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028432636504E00E10784 /* PullToRefresh.swift */; };
 		CE70284726365DD800E10784 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284626365DD800E10784 /* UserDefaultsStore.swift */; };
-		CE70284A263671EC00E10784 /* TokenAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702849263671EC00E10784 /* TokenAddedView.swift */; };
+		CE70284A263671EC00E10784 /* ItemAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702849263671EC00E10784 /* ItemAddedView.swift */; };
 		CE70284E26367D9100E10784 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284D26367D9100E10784 /* HUDProgressView.swift */; };
 		CE702851263683E800E10784 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702850263683E800E10784 /* BlurView.swift */; };
 		CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028532636A2DF00E10784 /* CoinManager.swift */; };
@@ -51,7 +51,7 @@
 		CE4E1CB2262AA71900743F61 /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
 		CE7028432636504E00E10784 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		CE70284626365DD800E10784 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
-		CE702849263671EC00E10784 /* TokenAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddedView.swift; sourceTree = "<group>"; };
+		CE702849263671EC00E10784 /* ItemAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddedView.swift; sourceTree = "<group>"; };
 		CE70284D26367D9100E10784 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		CE702850263683E800E10784 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		CE7028532636A2DF00E10784 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 				CE70284D26367D9100E10784 /* HUDProgressView.swift */,
 				CE702850263683E800E10784 /* BlurView.swift */,
 				CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */,
+				CE702849263671EC00E10784 /* ItemAddedView.swift */,
 				CED2A5C42643780700000B3E /* PopupView */,
 			);
 			path = SharedViews;
@@ -136,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0E6D0E2634B775004B9A59 /* AddTokenView.swift */,
-				CE702849263671EC00E10784 /* TokenAddedView.swift */,
 			);
 			path = AddToken;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 				CE773AEE2642A0D500F2DF42 /* AlertOption.swift in Sources */,
 				CEA416882632CE270095EB37 /* CoinViewModel.swift in Sources */,
 				CED2A5E2264557D000000B3E /* Delete.swift in Sources */,
-				CE70284A263671EC00E10784 /* TokenAddedView.swift in Sources */,
+				CE70284A263671EC00E10784 /* ItemAddedView.swift in Sources */,
 				CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */,
 				CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */,
 				CE8102F2263CF8CE0012E991 /* PriceAlertView.swift in Sources */,

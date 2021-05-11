@@ -71,9 +71,10 @@ struct Watchlist: View {
                 AddTokenView(show: $showAddTokenPopup)
             }
             
-            if coinManager.showAddTokenView {
+            if coinManager.showTokenAddedView {
                 withAnimation {
-                    TokenAddedView(show: $coinManager.showAddTokenView, coinName: coinManager.coinAdded?.name ?? "")
+                    ItemAddedView(show: $coinManager.showTokenAddedView,
+                                  text: "\(coinManager.coinAdded?.name ?? "") Added to Watchlist")
                 }
             }
             

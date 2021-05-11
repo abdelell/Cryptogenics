@@ -10,6 +10,7 @@ import SwiftUI
 struct PriceAlertView: View {
     
     @State var showAddPriceAlertPopup = false
+    @State var showPriceAlertAddedView = false
     
     var body: some View {
         ZStack {
@@ -17,7 +18,8 @@ struct PriceAlertView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(1...5, id: \.self) { _ in
-                            PriceAlertItem(priceAlert: PriceAlert.sample, isActive: PriceAlert.sample.isActive)
+                            PriceAlertItem(priceAlert: PriceAlert.sample,
+                                           isActive: PriceAlert.sample.isActive)
                                 .padding(.horizontal)
                                 .padding(.bottom)
                         }
@@ -38,7 +40,15 @@ struct PriceAlertView: View {
             }
             
             if showAddPriceAlertPopup {
-                AddPriceAlertView(show: $showAddPriceAlertPopup)
+                AddPriceAlertView(show: $showAddPriceAlertPopup,
+                                  showPriceAlertAdded: $showPriceAlertAddedView)
+            }
+            
+            if showPriceAlertAddedView {
+                withAnimation {
+                    ItemAddedView(show: $showPriceAlertAddedView,
+                                  text: "Added Price Alert")
+                }
             }
         }
 //        .transition(.opacity)

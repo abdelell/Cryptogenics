@@ -14,7 +14,7 @@ class CoinManager: ObservableObject {
         }
     }
     @Published var coinAdded: Coin?
-    @Published var showAddTokenView: Bool = false
+    @Published var showTokenAddedView: Bool = false
     @Published var numOfCoins = 0
     @Published var expandedCoinContractAddress: String = ""
     

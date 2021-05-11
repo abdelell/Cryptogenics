@@ -83,7 +83,7 @@ struct AddTokenView: View {
                             case .addedToWatchlist(let coin):
                                 coinManager.coins.append(coin)
                                 coinManager.coinAdded = coin
-                                coinManager.showAddTokenView = true
+                                coinManager.showTokenAddedView = true
                                 withAnimation {
                                     show.toggle()
                                 }

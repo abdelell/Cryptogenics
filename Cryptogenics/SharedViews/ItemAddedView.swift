@@ -1,5 +1,5 @@
 //
-//  TokenAddedView.swift
+//  ItemAddedView.swift
 //  Cryptogenics
 //
 //  Created by user on 4/26/21.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TokenAddedView: View {
+struct ItemAddedView: View {
     
     @Binding var show: Bool
-    var coinName: String
+    var text: String
     
     var body: some View {
         VStack {
@@ -19,7 +19,7 @@ struct TokenAddedView: View {
                 .frame(width: 60, height: 60)
                 .foregroundColor(.gray)
                 .padding()
-            Text("\(coinName) Added to Watchlist")
+            Text(text)
                 .foregroundColor(.gray)
                 .font(.headline)
                 .padding()

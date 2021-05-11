@@ -11,14 +11,16 @@ struct AddPriceAlertView: View {
     @StateObject var priceAlertViewModel = PriceAlertViewModel()
     
     @Binding var show: Bool
-    @State private var showAlreadyExistsAlert = false
+    @State private var showErrorAlert = false
     @State private var showInvalidAddress = false
-
+    
+    @Binding var showPriceAlertAdded: Bool
+    
     @State var tokenAddress: String = ""
+    
     @State var isTokenValid: Bool = false
     
     @State var HUD = false
-    @State var selectedCoin : Coin = Coin.sample
     
     @State private var swapExchange = "PancakeSwap"
     var swapExchanges = ["PancakeSwap"]
@@ -51,7 +53,7 @@ struct AddPriceAlertView: View {
                     }
 
                     if isTokenValid {
-                        Text("\(selectedCoin.name) - \(selectedCoin.symbol)")
+                        Text("\(priceAlertViewModel.selectedCoin.name) - \(priceAlertViewModel.selectedCoin.symbol)")
                             .font(.title3)
                             .bold()
                             .onTapGesture {
@@ -70,7 +72,7 @@ struct AddPriceAlertView: View {
                                     }
                                 }
                             Spacer()
-                            Text("\(selectedCoin.formattedPrice)")
+                            Text("\(priceAlertViewModel.selectedCoin.formattedPrice)")
                                 .font(.body)
                                 .onTapGesture {
                                     if UIApplication.shared.isKeyboardPresented {
@@ -109,7 +111,7 @@ struct AddPriceAlertView: View {
                                 
                                     
                             } else if priceAlertViewModel.selectedAlertOption.type == .moneyAmount {
-                                TextField("$0.00", text: $priceAlertViewModel.target)
+                                TextField("$0.00", text: $priceAlertViewModel.targetAmount)
                                     .keyboardType(.decimalPad)
                                     .multilineTextAlignment(.trailing)
                                     .font(.body)
@@ -121,7 +123,20 @@ struct AddPriceAlertView: View {
                         Divider()
                         
                         Button(action: {
-                            
+                            HUD = true
+                            priceAlertViewModel.addPriceAlert { result in
+                                HUD = false
+                                
+                                switch result {
+                                case .success(_):
+                                    showPriceAlertAdded = true
+                                    withAnimation {
+                                        show.toggle()
+                                    }
+                                case .failure(_):
+                                    showErrorAlert = true
+                                }
+                            }
                         }) {
                             Text("Add Price Alert")
                                 .foregroundColor(self.isTargetValid() ? Color.white : Color.gray)
@@ -133,8 +148,8 @@ struct AddPriceAlertView: View {
                         }
                         
                         .disabled(!self.isTargetValid())
-                        .alert(isPresented: $showAlreadyExistsAlert, content: {
-                            Alert(title: Text("Token is already in your watchlist"))
+                        .alert(isPresented: $showErrorAlert, content: {
+                            Alert(title: Text("Error adding price alert\nPlease try again later"))
                         })
                     }
 
@@ -159,17 +174,18 @@ struct AddPriceAlertView: View {
                 HUDProgressView(placeHolder: "", show: $HUD)
                     .edgesIgnoringSafeArea(.all)
             }
+            
         }
     }
     
     func isTargetValid() -> Bool {
         if priceAlertViewModel.selectedAlertOption.type == .moneyAmount {
-            var count = priceAlertViewModel.target.count
-            if priceAlertViewModel.target.contains("$") {
+            var count = priceAlertViewModel.targetAmount.count
+            if priceAlertViewModel.targetAmount.contains("$") {
                 count = count - 1
             }
             
-            let target = priceAlertViewModel.target.split(separator: "$").joined()
+            let target = priceAlertViewModel.targetAmount.split(separator: "$").joined()
             
             if let targetNum = Double(target), targetNum == 0 {
                 return false
@@ -190,7 +206,7 @@ struct AddPriceAlertView: View {
         let pastedText = UIPasteboard.general.string ?? ""
 
         if pastedText.prefix(2) != "0x" {
-            showAlreadyExistsAlert = true
+            showInvalidAddress = true
         } else {
             tokenAddress = pastedText
         }
@@ -202,7 +218,7 @@ struct AddPriceAlertView: View {
             switch result {
             case .success(let coin):
                 isTokenValid = true
-                selectedCoin = coin
+                priceAlertViewModel.selectedCoin = coin
             case .failure(.invalidCoin), .failure(.badURL):
                 isTokenValid = false
                 showInvalidAddress = true
