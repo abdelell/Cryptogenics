@@ -12,7 +12,6 @@ struct PriceAlert: Identifiable {
     let coin = Coin.sample
     let alertOption: AlertOption
     let target: Double
-    var isActive: Bool
     var offset: CGFloat = 0
     var isSwiped: Bool = false
 }
@@ -20,7 +19,6 @@ struct PriceAlert: Identifiable {
 extension PriceAlert {
     static var sample: PriceAlert {
         return PriceAlert(alertOption: AlertOptions.priceFallsBelow.getAlert(),
-                          target: 0.000000054,
-                          isActive: true)
+                          target: 0.000000054)
     }
 }

@@ -37,13 +37,14 @@
 		CED2A5CA2643798900000B3E /* PopupTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5C92643798900000B3E /* PopupTitle.swift */; };
 		CED2A5CD26437F3F00000B3E /* PopupSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */; };
 		CED2A5D12643838600000B3E /* AddPriceAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5D02643838600000B3E /* AddPriceAlertView.swift */; };
-		CED2A5D52643B3A600000B3E /* PriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */; };
+		CED2A5D52643B3A600000B3E /* AddPriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5D42643B3A600000B3E /* AddPriceAlertViewModel.swift */; };
 		CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */; };
 		CED2A5DF2643D44D00000B3E /* AlertOptionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */; };
 		CED2A5E2264557D000000B3E /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5E1264557CF00000B3E /* Delete.swift */; };
 		CED2A5EA26491F9400000B3E /* CoinRowMainContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5E926491F9400000B3E /* CoinRowMainContent.swift */; };
 		CED2A5EF2649220900000B3E /* CoinRowSubContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */; };
 		CED2A5F22649737800000B3E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5F12649737800000B3E /* SafariView.swift */; };
+		CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,13 +79,14 @@
 		CED2A5C92643798900000B3E /* PopupTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTitle.swift; sourceTree = "<group>"; };
 		CED2A5CC26437F3F00000B3E /* PopupSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSubmitButton.swift; sourceTree = "<group>"; };
 		CED2A5D02643838600000B3E /* AddPriceAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPriceAlertView.swift; sourceTree = "<group>"; };
-		CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertViewModel.swift; sourceTree = "<group>"; };
+		CED2A5D42643B3A600000B3E /* AddPriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPriceAlertViewModel.swift; sourceTree = "<group>"; };
 		CED2A5DA2643CE8E00000B3E /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
 		CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOptionsMenuView.swift; sourceTree = "<group>"; };
 		CED2A5E1264557CF00000B3E /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
 		CED2A5E926491F9400000B3E /* CoinRowMainContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowMainContent.swift; sourceTree = "<group>"; };
 		CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowSubContent.swift; sourceTree = "<group>"; };
 		CED2A5F12649737800000B3E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				CED2A5D02643838600000B3E /* AddPriceAlertView.swift */,
 				CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */,
+				CED2A5D42643B3A600000B3E /* AddPriceAlertViewModel.swift */,
 			);
 			path = AddPriceAlert;
 			sourceTree = "<group>";
@@ -171,7 +174,7 @@
 				CE773AE826412D5800F2DF42 /* PriceAlert.swift */,
 				CE773AE426412D0500F2DF42 /* AddPriceAlert */,
 				CE773AED2642A0D500F2DF42 /* AlertOption.swift */,
-				CED2A5D42643B3A600000B3E /* PriceAlertViewModel.swift */,
+				CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */,
 			);
 			path = PriceAlert;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				CE70284A263671EC00E10784 /* ItemAddedView.swift in Sources */,
 				CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */,
 				CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */,
+				CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */,
 				CE8102F2263CF8CE0012E991 /* PriceAlertView.swift in Sources */,
 				CEC5A05F262A95700025C74B /* AppDelegate.swift in Sources */,
 				CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */,
@@ -344,7 +348,7 @@
 				CED2A5CD26437F3F00000B3E /* PopupSubmitButton.swift in Sources */,
 				CED2A5DB2643CE8E00000B3E /* AdaptsToKeyboard.swift in Sources */,
 				CE70284726365DD800E10784 /* UserDefaultsStore.swift in Sources */,
-				CED2A5D52643B3A600000B3E /* PriceAlertViewModel.swift in Sources */,
+				CED2A5D52643B3A600000B3E /* AddPriceAlertViewModel.swift in Sources */,
 				CED2A5F22649737800000B3E /* SafariView.swift in Sources */,
 				CE964453264304DA004F3F3B /* BackgroundDismissButton.swift in Sources */,
 				CE4E1CB3262AA71900743F61 /* Watchlist.swift in Sources */,

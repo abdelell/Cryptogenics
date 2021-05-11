@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlertOptionsMenuView: View {
-    @StateObject var priceAlertViewModel: PriceAlertViewModel
+    @StateObject var priceAlertViewModel: AddPriceAlertViewModel
     var alertOptions : [AlertOption] = AlertOptions.getAlerts()
     
     var body: some View {

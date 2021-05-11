@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddPriceAlertView: View {
-    @StateObject var priceAlertViewModel = PriceAlertViewModel()
+    @StateObject var priceAlertViewModel = AddPriceAlertViewModel()
     
     @Binding var show: Bool
     @State private var showErrorAlert = false

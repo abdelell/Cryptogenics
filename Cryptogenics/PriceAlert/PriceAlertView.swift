@@ -18,8 +18,7 @@ struct PriceAlertView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(1...5, id: \.self) { _ in
-                            PriceAlertItem(priceAlert: PriceAlert.sample,
-                                           isActive: PriceAlert.sample.isActive)
+                            PriceAlertItem(priceAlert: PriceAlert.sample)
                                 .padding(.horizontal)
                                 .padding(.bottom)
                         }
