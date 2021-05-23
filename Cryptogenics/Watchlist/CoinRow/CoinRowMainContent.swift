@@ -16,8 +16,6 @@ struct CoinRowMainContent: View {
         return coinManager.expandedCoinContractAddress == coin.contractAddress
     }
     
-//    @State var isExpanded: Bool = false
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -35,6 +33,7 @@ struct CoinRowMainContent: View {
                         Text("\(coin.formattedPrice)")
                             .fontWeight(.semibold)
                     }
+                    PercentChange(percentChange: coin.formattedPriceChange24h, isPositive: coin.isPriceChange24hPositive)
                 }
                 Image(systemName: isExpanded ? "chevron.down" : "chevron.right" )
                     .font(.body)
@@ -57,6 +56,24 @@ struct CoinRowMainContent: View {
         }
     }
 }
+
+struct PercentChange: View {
+    var percentChange: String
+    var isPositive: Bool
+    
+    var body: some View {
+        Text(percentChange)
+            .padding(.vertical, 4)
+            .padding(.trailing, 4)
+            .padding(.leading, 12)
+            .foregroundColor(.white)
+            .background(isPositive ? Color.upGreenColor : Color.downRedColor)
+            .font(.system(size: 15))
+            .cornerRadius(4.0)
+            
+    }
+}
+
 
 struct CoinRowMainContent_Previews: PreviewProvider {
     static var previews: some View {

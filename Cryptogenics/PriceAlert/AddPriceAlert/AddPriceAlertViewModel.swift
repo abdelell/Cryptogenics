@@ -56,7 +56,7 @@ class AddPriceAlertViewModel: ObservableObject {
         }
     }
     
-    @Published var selectedAlertOption: AlertOption = AlertOptions.priceRisesAbove.getAlert()
+    @Published var selectedAlertOption: AlertOption = AlertOptions.priceRisesByPercent.getAlert()
     
     var target: Double {
         get {
@@ -80,22 +80,49 @@ class AddPriceAlertViewModel: ObservableObject {
     }
     
     func addPriceAlert(completion:@escaping (Result<SuccessFirebase, NetworkError>) -> ()) {
+        let deviceToken = UserDefaults.standard.object(forKey:"token") as? String ?? ""
         let db = Firestore.firestore()
+        
+        let priceRisesAbove = selectedAlertOption.type == AlertOptions.priceRisesAbove.getAlert().type || selectedAlertOption.type == AlertOptions.priceRisesByPercent.getAlert().type
+        
         db.collection("alerts")
             .document(selectedCoin.contractAddress)
+            .setData([
+                "coinName": selectedCoin.name,
+                "coinSymbol": selectedCoin.symbol
+            ])
+        
+        
+        let document = db.collection("alerts")
+            .document(selectedCoin.contractAddress)
             .collection("priceAlerts")
-            .addDocument(data: [
-            "deviceToken": UserDefaults.standard.object(forKey:"token") as? String ?? "",
+            .document()
+        
+        document.setData([
+            "deviceToken": deviceToken,
             "target": target,
-            "priceRisesAbove": selectedAlertOption.type == AlertOptions.priceRisesAbove.getAlert().type || selectedAlertOption.type == AlertOptions.priceRisesByPercent.getAlert().type
+            "priceRisesAbove": priceRisesAbove
         ]) { err in
             if let err = err {
                 completion(.failure(.errorAddingDocument))
                 print("Error adding document: \(err)")
             } else {
                 completion(.success(.addedPriceAlert))
+                addPriceAlertLocally()
+                NotificationCenter.default.post(name: Notification.Name("AddedPriceAlert"), object: nil)
                 print("Document added with ID: \(self.selectedCoin.contractAddress)")
             }
+        }
+        
+        func addPriceAlertLocally() {
+            let dict = [
+                "contractAddress": selectedCoin.contractAddress,
+                "target": target,
+                "priceRisesAbove": priceRisesAbove,
+                "documentID": document.documentID
+            ] as [String : Any]
+            
+            PriceAlertUserDefaultsStore.addPriceAlertLocally(dict: dict)
         }
     }
 }

@@ -76,18 +76,3 @@ struct CoinRow: View {
         }
     }
 }
-
-struct PercentChange: View {
-    
-    var body: some View {
-        Text("-9.04%")
-            .padding(.vertical, 2)
-            .padding(.trailing, 4)
-            .padding(.leading, 12)
-            .foregroundColor(.white)
-            .background(Color.downRedColor)
-            .font(.system(size: 15))
-            .cornerRadius(4.0)
-    }
-    
-}

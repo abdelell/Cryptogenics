@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct PriceAlertItem: View {
-    
+    @EnvironmentObject var priceAlertViewModel: PriceAlertViewModel
     @State var priceAlert: PriceAlert
+    
+    @State var showDeletePriceAlertError: Bool = false
+    
+    @Binding var HUD: Bool
     
     var body: some View {
         ZStack {
@@ -18,6 +22,7 @@ struct PriceAlertItem: View {
                 
                 Button(action: {
                     withAnimation(.easeIn) {
+                        HUD = true
                         deleteCoin()
                     }
                 }) {
@@ -32,32 +37,31 @@ struct PriceAlertItem: View {
             VStack {
                 Group {
                     HStack {
-                        Text("Pitbull - Pit")
+                        Text("\(priceAlert.coin.name) - \(priceAlert.coin.symbol)")
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
-                        Button(action: {
-                            
-                        }) {
-                            Text("Edit")
-                        }
+//                        Button(action: {
+//                            
+//                        }) {
+//                            Text("Edit")
+//                        }
                     }
                     HStack {
                         Text("Current Price:")
                         Spacer()
-                        Text("$0.0000000034")
+                        Text(priceAlert.coin.formattedPrice)
                     }
                     Divider()
                     HStack {
-                        Text("Target")
-                            .foregroundColor(.gray)
+                        Text(priceAlert.priceRisesAbove ? "Above Target" : "Below Target")
+                             .foregroundColor(.gray)
                         Spacer()
-                        Text("0.82% - $0.000000054")
+                        Text("\(priceAlert.documentID)")
                             .foregroundColor(.gray)
                     }
                 }
             }
-            
             .padding()
             .background(Color(red: 33/255, green: 33/255, blue: 36/255))
             .cornerRadius(15.0)
@@ -68,6 +72,9 @@ struct PriceAlertItem: View {
                     .onChanged(onChanged(value:))
                     .onEnded(onEnded(value:))
             )
+            .alert(isPresented: $showDeletePriceAlertError, content: {
+                Alert(title: Text("Error deleting price alert\nPlease try again later"))
+            })
         }
     }
     
@@ -99,15 +106,18 @@ struct PriceAlertItem: View {
     }
     
     func deleteCoin() {
-//        UserDefaultsStore.deleteToken(contractAddress: coin.contractAddress)
-//        coinManager.coins.removeAll { (coin) -> Bool in
-//            return self.coin.id == coin.id
-//        }
+        priceAlertViewModel.deletePriceAlert(priceAlert: priceAlert) {
+            HUD = false
+        } failureCompletion: {
+            HUD = false
+            showDeletePriceAlertError = true
+        }
+
     }
 }
 
-struct PriceAlertItem_Previews: PreviewProvider {
-    static var previews: some View {
-        PriceAlertItem(priceAlert: PriceAlert.sample)
-    }
-}
+//struct PriceAlertItem_Previews: PreviewProvider {
+//    static var previews: some View {
+////        PriceAlertItem(priceAlert: PriceAlert.sample)
+//    }
+//}

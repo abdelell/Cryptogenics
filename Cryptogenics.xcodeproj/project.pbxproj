@@ -45,6 +45,7 @@
 		CED2A5EF2649220900000B3E /* CoinRowSubContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */; };
 		CED2A5F22649737800000B3E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5F12649737800000B3E /* SafariView.swift */; };
 		CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */; };
+		CED2A601264B017100000B3E /* PriceAlertUserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		CED2A5EE2649220900000B3E /* CoinRowSubContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowSubContent.swift; sourceTree = "<group>"; };
 		CED2A5F12649737800000B3E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertViewModel.swift; sourceTree = "<group>"; };
+		CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertUserDefaultsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				CE773AE826412D5800F2DF42 /* PriceAlert.swift */,
 				CE773AE426412D0500F2DF42 /* AddPriceAlert */,
 				CE773AED2642A0D500F2DF42 /* AlertOption.swift */,
+				CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */,
 				CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */,
 			);
 			path = PriceAlert;
@@ -338,6 +341,7 @@
 				CEA416882632CE270095EB37 /* CoinViewModel.swift in Sources */,
 				CED2A5E2264557D000000B3E /* Delete.swift in Sources */,
 				CE70284A263671EC00E10784 /* ItemAddedView.swift in Sources */,
+				CED2A601264B017100000B3E /* PriceAlertUserDefaultsStore.swift in Sources */,
 				CE0E6D0F2634B775004B9A59 /* AddTokenView.swift in Sources */,
 				CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */,
 				CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */,

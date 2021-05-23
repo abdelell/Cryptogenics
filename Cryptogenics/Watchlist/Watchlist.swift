@@ -59,7 +59,7 @@ struct Watchlist: View {
             if UserDefaultsStore.getContractAddresses().count == 0 {
                 VStack {
                     Spacer()
-                    Text("Add Coins by Tapping on the\nPlus Sign on the Top Right Corner")
+                    Text("Add coins by tapping on the\nplus sign on the top right corner")
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray)
                         .font(.title3)

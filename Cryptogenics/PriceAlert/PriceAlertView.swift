@@ -8,19 +8,30 @@
 import SwiftUI
 
 struct PriceAlertView: View {
-    
+    @StateObject var priceAlertViewModel: PriceAlertViewModel
     @State var showAddPriceAlertPopup = false
     @State var showPriceAlertAddedView = false
+    
+    @State var HUD: Bool = false
     
     var body: some View {
         ZStack {
             NavigationView {
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(1...5, id: \.self) { _ in
-                            PriceAlertItem(priceAlert: PriceAlert.sample)
+                        ForEach(priceAlertViewModel.priceAlerts) { priceAlert in
+                            PriceAlertItem(priceAlert: priceAlert, HUD: $HUD)
                                 .padding(.horizontal)
                                 .padding(.bottom)
+                        }
+                        
+                        if priceAlertViewModel.priceAlerts.count < PriceAlertUserDefaultsStore.getLocalPriceAlerts().count {
+                            HStack {
+                                Spacer()
+                                ProgressView()
+                                    .foregroundColor(.silver)
+                                Spacer()
+                            }
                         }
                     }
                 }
@@ -36,6 +47,18 @@ struct PriceAlertView: View {
                         }
                     }
                 }
+                
+            }
+            
+            if (priceAlertViewModel.priceAlertsFetchComplete && PriceAlertUserDefaultsStore.getLocalPriceAlerts().count == 0) {
+                VStack {
+                    Spacer()
+                    Text("Add price alerts by tapping on the\nplus sign on the top right corner")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                        .font(.title3)
+                    Spacer()
+                }
             }
             
             if showAddPriceAlertPopup {
@@ -49,6 +72,16 @@ struct PriceAlertView: View {
                                   text: "Added Price Alert")
                 }
             }
+            
+            if HUD {
+                HUDProgressView(placeHolder: "", show: $HUD)
+                    .edgesIgnoringSafeArea(.all)
+            }
+            
+        }
+        .environmentObject(priceAlertViewModel)
+        .onAppear {
+            print("Price alerts: \(PriceAlertUserDefaultsStore.getLocalPriceAlerts().count)")
         }
 //        .transition(.opacity)
 //        .animation(.linear)
@@ -57,6 +90,6 @@ struct PriceAlertView: View {
 
 struct PriceAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        PriceAlertView()
+        PriceAlertView(priceAlertViewModel: PriceAlertViewModel())
     }
 }

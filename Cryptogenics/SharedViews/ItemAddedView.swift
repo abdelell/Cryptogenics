@@ -30,7 +30,7 @@ struct ItemAddedView: View {
         .cornerRadius(15)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 withAnimation {
                     show.toggle()
                 }

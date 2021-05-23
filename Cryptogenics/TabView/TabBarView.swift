@@ -23,7 +23,7 @@ struct TabBarView: View {
                 }
                 .navigationBarHidden(true)
             NavigationView {
-                PriceAlertView()
+                PriceAlertView(priceAlertViewModel: PriceAlertViewModel())
                     
                     .navigationBarHidden(true)
             }

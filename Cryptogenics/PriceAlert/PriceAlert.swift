@@ -9,16 +9,19 @@ import SwiftUI
 
 struct PriceAlert: Identifiable {
     let id = UUID()
-    let coin = Coin.sample
-    let alertOption: AlertOption
+    let coin: Coin
+    let priceRisesAbove: Bool
     let target: Double
+    let documentID: String
     var offset: CGFloat = 0
     var isSwiped: Bool = false
 }
 
 extension PriceAlert {
     static var sample: PriceAlert {
-        return PriceAlert(alertOption: AlertOptions.priceFallsBelow.getAlert(),
-                          target: 0.000000054)
+        return PriceAlert(coin: Coin.sample,
+                          priceRisesAbove: true,
+                          target: 0.0000031,
+                          documentID: "jsdjlflsdjkkjfsdkfjdhs")
     }
 }

@@ -24,7 +24,7 @@ struct Coin: Identifiable {
         if Int(priceUSD) > 0 {
             return "$\(priceUSD.truncate(places: 2))"
         } else {
-            let stringIntegers = "\(priceUSD)".prefix(3)
+            let stringIntegers = "\(priceUSD)".prefix(6)
             
             let numOfZerosString = "\(priceUSD)".split(separator: "-")
             
@@ -38,6 +38,21 @@ struct Coin: Identifiable {
             
             return "$0.\(repeater(string: "0", withNumber: numOfZeros))\(integers)"
         }
+    }
+    
+    var formattedPriceChange24h: String {
+        let priceChange24hString = String(priceChange24h * 100)
+//        let priceChange24hString = "-110.810542359431505"
+        let numOfWholeNums = priceChange24hString.split(separator: ".")[0].count
+        let sign = isPriceChange24hPositive ? "+" : ""
+        
+        return "\(sign)\(priceChange24hString.prefix(numOfWholeNums + 3))%"
+    }
+    
+    var isPriceChange24hPositive: Bool {
+        let priceChange24hString = String(priceChange24h)
+        
+        return priceChange24hString.prefix(1) != "-"
     }
     
     func repeater(string: String, withNumber number: Int) -> String {

@@ -17,11 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Cloud Messaging Setup
-        
-
         UNUserNotificationCenter.current().delegate = self
 
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        let authOptions: UNAuthorizationOptions = [.alert, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: {_, _ in })
@@ -48,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Message ID: \(messageID)")
         }
         
-        setupUserInfoForNotification(userInfo: userInfo)
+        print("DID RECEIVE REMOTE NOTIFICATION")
+        
         completionHandler(UIBackgroundFetchResult.newData)
     }
 
@@ -59,36 +58,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
-    
-    func setupUserInfoForNotification(userInfo: [AnyHashable: Any]) {
-        guard let data = userInfo["aps"] as? [String: AnyObject] else {
-          return
-        }
-        
-        guard let title = userInfo["title"] as? String,
-              let body = userInfo["body"] as? String else {
-            print("Setup notifications not working")
-            print(userInfo)
-            print(data)
-            return
-        }
-
-        print("\nNotification:\nTitle: \(title)\nBody: \(body)")
 //
-        createNotification(title: title, body: body)
-    }
-    
-    func createNotification(title: String, body: String) {
-        let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: title, arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: body, arguments: nil)
-        content.sound = UNNotificationSound.default
-
-        let request = UNNotificationRequest.init(identifier: "pushNotif", content: content, trigger: nil)
-
-        let center = UNUserNotificationCenter.current()
-        center.add(request)
-    }
+//    func setupUserInfoForNotification(userInfo: [AnyHashable: Any]) {
+//        guard let data = userInfo["aps"] as? [String: AnyObject] else {
+//          return
+//        }
+//
+//        guard let title = userInfo["title"] as? String,
+//              let body = userInfo["body"] as? String else {
+//            print("Setup notifications not working")
+////            print(userInfo)
+////            print(data)
+//            return
+//        }
+//
+//        print("\nNotification:\nTitle: \(title)\nBody: \(body)")
+////
+////        createNotification(title: title, body: body)
+//    }
 }
 
 // Cloud Messaging
@@ -101,7 +88,6 @@ extension AppDelegate: MessagingDelegate {
         
         UserDefaults.standard.setValue(dataDict["token"], forKey: "token")
 //        print(dataDict)
-    
     }
 }
 
@@ -112,8 +98,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo
 
         Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        setupUserInfoForNotification(userInfo: userInfo)
+        print("WILL PRESENT NOTIFICATION")
+//        receivedPriceAlert(userInfo: userInfo)
+//        setupUserInfoForNotification(userInfo: userInfo)
         
         completionHandler([.banner, .sound])
     }
