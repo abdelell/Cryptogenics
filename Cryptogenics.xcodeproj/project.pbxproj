@@ -14,7 +14,6 @@
 		CE70284A263671EC00E10784 /* ItemAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702849263671EC00E10784 /* ItemAddedView.swift */; };
 		CE70284E26367D9100E10784 /* HUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70284D26367D9100E10784 /* HUDProgressView.swift */; };
 		CE702851263683E800E10784 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE702850263683E800E10784 /* BlurView.swift */; };
-		CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7028532636A2DF00E10784 /* CoinManager.swift */; };
 		CE773AE0263EDD5100F2DF42 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE773ADF263EDD5100F2DF42 /* FirebaseFirestore */; };
 		CE773AE2263EDD5100F2DF42 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE773AE1263EDD5100F2DF42 /* FirebaseMessaging */; };
 		CE773AE926412D5800F2DF42 /* PriceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE773AE826412D5800F2DF42 /* PriceAlert.swift */; };
@@ -46,6 +45,7 @@
 		CED2A5F22649737800000B3E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5F12649737800000B3E /* SafariView.swift */; };
 		CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */; };
 		CED2A601264B017100000B3E /* PriceAlertUserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */; };
+		CEE44FBB265B11640011A087 /* FormatPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE44FBA265B11640011A087 /* FormatPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,6 @@
 		CE702849263671EC00E10784 /* ItemAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddedView.swift; sourceTree = "<group>"; };
 		CE70284D26367D9100E10784 /* HUDProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDProgressView.swift; sourceTree = "<group>"; };
 		CE702850263683E800E10784 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		CE7028532636A2DF00E10784 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
 		CE773AE826412D5800F2DF42 /* PriceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlert.swift; sourceTree = "<group>"; };
 		CE773AED2642A0D500F2DF42 /* AlertOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOption.swift; sourceTree = "<group>"; };
 		CE8102D7263BCD340012E991 /* Cryptogenics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cryptogenics.entitlements; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		CED2A5F12649737800000B3E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertViewModel.swift; sourceTree = "<group>"; };
 		CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceAlertUserDefaultsStore.swift; sourceTree = "<group>"; };
+		CEE44FBA265B11640011A087 /* FormatPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,6 @@
 			children = (
 				CE4E1CB2262AA71900743F61 /* Watchlist.swift */,
 				CED2A5E826491F6F00000B3E /* CoinRow */,
-				CE7028532636A2DF00E10784 /* CoinManager.swift */,
 				CE7028572637E6FB00E10784 /* AddToken */,
 				CEA416842632C7EB0095EB37 /* Coin.swift */,
 				CEA416872632CE270095EB37 /* CoinViewModel.swift */,
@@ -150,6 +149,7 @@
 			children = (
 				CED2A5D02643838600000B3E /* AddPriceAlertView.swift */,
 				CED2A5DE2643D44D00000B3E /* AlertOptionsMenuView.swift */,
+				CE773AED2642A0D500F2DF42 /* AlertOption.swift */,
 				CED2A5D42643B3A600000B3E /* AddPriceAlertViewModel.swift */,
 			);
 			path = AddPriceAlert;
@@ -163,6 +163,7 @@
 				CEC5A060262A95700025C74B /* SceneDelegate.swift */,
 				CEC5A062262A95700025C74B /* Colors.swift */,
 				CE70284626365DD800E10784 /* UserDefaultsStore.swift */,
+				CEE44FBA265B11640011A087 /* FormatPrice.swift */,
 				CED2A5E1264557CF00000B3E /* Delete.swift */,
 			);
 			path = Shared;
@@ -175,7 +176,6 @@
 				CE8102EE263CF8690012E991 /* PriceAlertItem.swift */,
 				CE773AE826412D5800F2DF42 /* PriceAlert.swift */,
 				CE773AE426412D0500F2DF42 /* AddPriceAlert */,
-				CE773AED2642A0D500F2DF42 /* AlertOption.swift */,
 				CED2A600264B017100000B3E /* PriceAlertUserDefaultsStore.swift */,
 				CED2A5FD264AA5EA00000B3E /* PriceAlertViewModel.swift */,
 			);
@@ -335,7 +335,6 @@
 				CE773AE926412D5800F2DF42 /* PriceAlert.swift in Sources */,
 				CE8102F7263D00670012E991 /* TabBarView.swift in Sources */,
 				CED2A5EA26491F9400000B3E /* CoinRowMainContent.swift in Sources */,
-				CE7028542636A2DF00E10784 /* CoinManager.swift in Sources */,
 				CEA416852632C7EB0095EB37 /* Coin.swift in Sources */,
 				CE773AEE2642A0D500F2DF42 /* AlertOption.swift in Sources */,
 				CEA416882632CE270095EB37 /* CoinViewModel.swift in Sources */,
@@ -346,6 +345,7 @@
 				CED2A5C72643782B00000B3E /* XDismissButton.swift in Sources */,
 				CED2A5FE264AA5EA00000B3E /* PriceAlertViewModel.swift in Sources */,
 				CE8102F2263CF8CE0012E991 /* PriceAlertView.swift in Sources */,
+				CEE44FBB265B11640011A087 /* FormatPrice.swift in Sources */,
 				CEC5A05F262A95700025C74B /* AppDelegate.swift in Sources */,
 				CE7028442636504E00E10784 /* PullToRefresh.swift in Sources */,
 				CEA41681263298800095EB37 /* CoinRow.swift in Sources */,

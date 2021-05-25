@@ -9,7 +9,7 @@ import SwiftUI
 import MobileCoreServices
 
 struct AddTokenView: View {
-    @EnvironmentObject var coinManager: CoinManager
+    @EnvironmentObject var coinViewModel: CoinViewModel
     
     @Binding var show: Bool
     @State private var showInvalidAddressAlert = false
@@ -81,9 +81,9 @@ struct AddTokenView: View {
                             case CoinExistence.alreadyInWatchlist:
                                 showAlreadyExistsAlert = true
                             case .addedToWatchlist(let coin):
-                                coinManager.coins.append(coin)
-                                coinManager.coinAdded = coin
-                                coinManager.showTokenAddedView = true
+                                coinViewModel.coins.append(coin)
+                                coinViewModel.coinAdded = coin
+                                coinViewModel.showTokenAddedView = true
                                 withAnimation {
                                     show.toggle()
                                 }

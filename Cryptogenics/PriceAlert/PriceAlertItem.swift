@@ -41,11 +41,6 @@ struct PriceAlertItem: View {
                             .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
-//                        Button(action: {
-//                            
-//                        }) {
-//                            Text("Edit")
-//                        }
                     }
                     HStack {
                         Text("Current Price:")
@@ -57,7 +52,7 @@ struct PriceAlertItem: View {
                         Text(priceAlert.priceRisesAbove ? "Above Target" : "Below Target")
                              .foregroundColor(.gray)
                         Spacer()
-                        Text("\(priceAlert.documentID)")
+                        Text("\(priceAlert.formattedTarget)")
                             .foregroundColor(.gray)
                     }
                 }

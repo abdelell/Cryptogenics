@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CoinRowMainContent: View {
     
-    @EnvironmentObject var coinManager: CoinManager
+    @EnvironmentObject var coinViewModel: CoinViewModel
     @State var coin: Coin
     
     var isExpanded: Bool {
-        return coinManager.expandedCoinContractAddress == coin.contractAddress
+        return coinViewModel.expandedCoinContractAddress == coin.contractAddress
     }
     
     var body: some View {
@@ -42,7 +42,7 @@ struct CoinRowMainContent: View {
                     .animation(.none)
             }
             
-            if coinManager.expandedCoinContractAddress == coin.contractAddress {
+            if coinViewModel.expandedCoinContractAddress == coin.contractAddress {
                 CoinRowSubContent(coin: coin)
             }
             
@@ -51,7 +51,7 @@ struct CoinRowMainContent: View {
         }
         .onTapGesture {
             withAnimation(.linear(duration: 0.1)) {
-                coinManager.expandedCoinContractAddress = coinManager.expandedCoinContractAddress == coin.contractAddress ? "" : coin.contractAddress
+                coinViewModel.expandedCoinContractAddress = coinViewModel.expandedCoinContractAddress == coin.contractAddress ? "" : coin.contractAddress
             }
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoinRow: View {
     
-    @EnvironmentObject var coinManager: CoinManager
+    @EnvironmentObject var coinViewModel: CoinViewModel
     @State var coin: Coin
     
     var body: some View {
@@ -71,7 +71,7 @@ struct CoinRow: View {
     
     func deleteCoin() {
         UserDefaultsStore.deleteToken(contractAddress: coin.contractAddress)
-        coinManager.coins.removeAll { (coin) -> Bool in
+        coinViewModel.coins.removeAll { (coin) -> Bool in
             return self.coin.id == coin.id
         }
     }

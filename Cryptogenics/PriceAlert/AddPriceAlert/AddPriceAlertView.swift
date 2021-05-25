@@ -13,6 +13,7 @@ struct AddPriceAlertView: View {
     @Binding var show: Bool
     @State private var showErrorAlert = false
     @State private var showInvalidAddress = false
+    @State private var showPercentInvalidAlert = false
     
     @Binding var showPriceAlertAdded: Bool
     
@@ -53,9 +54,10 @@ struct AddPriceAlertView: View {
                     }
 
                     if isTokenValid {
-                        Text("\(priceAlertViewModel.selectedCoin.name) - \(priceAlertViewModel.selectedCoin.symbol)")
+                        Text("\(priceAlertViewModel.selectedCoin.name)\n\(priceAlertViewModel.selectedCoin.symbol)")
                             .font(.title3)
                             .bold()
+                            .multilineTextAlignment(.center)
                             .onTapGesture {
                                 if UIApplication.shared.isKeyboardPresented {
                                     UIApplication.shared.endEditing()
@@ -120,6 +122,12 @@ struct AddPriceAlertView: View {
                                 
                         }
                         .padding(2)
+                        .alert(isPresented: $showPercentInvalidAlert, content: {
+                            Alert(title: Text("Coin price can't fall by more than 99%"),
+                                  message: Text("Please input a different percentage number"),
+                                  dismissButton: .default(Text("Got it!")))
+                        })
+                        
                         Divider()
                         
                         Button(action: {
@@ -133,8 +141,10 @@ struct AddPriceAlertView: View {
                                     withAnimation {
                                         show.toggle()
                                     }
-                                case .failure(_):
+                                case .failure(.errorAddingDocument):
                                     showErrorAlert = true
+                                case .failure(.invalidFallByPercentNumber):
+                                    showPercentInvalidAlert = true
                                 }
                             }
                         }) {

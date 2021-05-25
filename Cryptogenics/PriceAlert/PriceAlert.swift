@@ -15,6 +15,11 @@ struct PriceAlert: Identifiable {
     let documentID: String
     var offset: CGFloat = 0
     var isSwiped: Bool = false
+    
+    var formattedTarget: String {
+        let formatPrice = FormatPrice(price: target)
+        return formatPrice.formattedPrice
+    }
 }
 
 extension PriceAlert {

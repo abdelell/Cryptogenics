@@ -7,14 +7,39 @@
 
 import Foundation
 
-class CoinViewModel {
+class CoinViewModel: ObservableObject {
     
     enum NetworkError: Error {
         case badURL
-        case invalidCoin
+        case invalidCoin(contractAddress: String)
+    }
+
+    @Published var coinAdded: Coin?
+    @Published var showTokenAddedView: Bool = false
+    @Published var numOfCoins = 0
+    @Published var expandedCoinContractAddress: String = ""
+    
+    @Published var coins = [Coin]()
+    @Published var timerCount = 1
+    
+    init() {
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getCoins), userInfo: nil, repeats: true)
+        
+        numOfCoins = UserDefaultsStore.getContractAddresses().count
     }
     
-    public func getCoins(completion:@escaping ([Coin]) -> ()) {
+    
+//    public func getCoins(completion:@escaping ([Coin]) -> ()) {
+    @objc public func getCoins() {
+        
+        timerCount = timerCount - 1
+        
+        guard timerCount == 0 else {
+            return
+        }
+        
+        timerCount = 15
+        
         let contracts = UserDefaultsStore.getContractAddresses()
 //        let contracts = ["0xb0b924c4a31b7d4581a7f78f57cee1e65736be1d",
 //                         "0xa57ac35ce91ee92caefaa8dc04140c8e232c2e50",
@@ -24,33 +49,45 @@ class CoinViewModel {
 //                         "0xFAd8E46123D7b4e77496491769C167FF894d2ACB",
 //                         "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"]
         
-        var coins = [Coin]() {
-            didSet {
-                coins.sort {
-                    guard let indexOfValue1 = contracts.firstIndex(of: $0.contractAddress),
-                          let indexOfValue2 = contracts.firstIndex(of: $1.contractAddress) else {
-                        return true
-                    }
-                    
-                    return indexOfValue1 < indexOfValue2
-                }
-            }
-        }
-        
-        
         for contract in contracts {
             getCoin(contractAddress: contract) { result in
                 
                 switch result {
                 case .success(let coin):
-                    coins.append(coin)
-                    DispatchQueue.main.async {
-                        completion(coins)
+                    if let index = coinExists(contractAddress: coin.contractAddress) {
+                        // Replace new price with old price
+                        self.coins[index] = coin
+                    } else {
+                        self.coins.append(coin)
+                        sortCoins()
                     }
                 case .failure(let error):
-                    print("Error getting coin: \(error) error")
+                    print("Error getting coin: \(error)")
                 }
                 
+            }
+        }
+        
+        func coinExists(contractAddress: String) -> Int? {
+            for i in 0..<coins.count {
+                if coins[i].contractAddress == contractAddress {
+                    return i
+                }
+            }
+            
+            return nil
+        }
+        
+        func sortCoins() {
+            numOfCoins = coins.count
+
+            coins.sort {
+                guard let indexOfValue1 = contracts.firstIndex(of: $0.contractAddress),
+                      let indexOfValue2 = contracts.firstIndex(of: $1.contractAddress) else {
+                    return true
+                }
+
+                return indexOfValue1 < indexOfValue2
             }
         }
 
@@ -65,7 +102,7 @@ class CoinViewModel {
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             
             guard let data = data, let coinJSON = try? JSONDecoder().decode(CoinJSON.self, from: data) else {
-                completion(.failure(.invalidCoin))
+                completion(.failure(.invalidCoin(contractAddress: contractAddress)))
                 return
             }
             
@@ -87,6 +124,11 @@ class CoinViewModel {
             }
         }
         .resume()
+    }
+    
+    
+    func delete(at offsets: IndexSet) {
+        coins.remove(atOffsets: offsets)
     }
     
 }

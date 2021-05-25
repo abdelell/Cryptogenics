@@ -19,6 +19,18 @@ struct PriceAlertView: View {
             NavigationView {
                 ScrollView(showsIndicators: false) {
                     VStack {
+                        if priceAlertViewModel.priceAlerts.count != 0 {
+                            HStack {
+                                Spacer()
+                                Text("Refreshing in \(priceAlertViewModel.timerCount)")
+                                    .italic()
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
+                                    .padding(2)
+                                Spacer()
+                            }
+                        }
+
                         ForEach(priceAlertViewModel.priceAlerts) { priceAlert in
                             PriceAlertItem(priceAlert: priceAlert, HUD: $HUD)
                                 .padding(.horizontal)
@@ -30,6 +42,7 @@ struct PriceAlertView: View {
                                 Spacer()
                                 ProgressView()
                                     .foregroundColor(.silver)
+                                    .padding(.bottom)
                                 Spacer()
                             }
                         }
@@ -74,7 +87,7 @@ struct PriceAlertView: View {
             }
             
             if HUD {
-                HUDProgressView(placeHolder: "", show: $HUD)
+                HUDProgressView(placeHolder: "", isTransparent: true, show: $HUD)
                     .edgesIgnoringSafeArea(.all)
             }
             

@@ -10,6 +10,7 @@ import SwiftUI
 struct HUDProgressView: View {
     
     var placeHolder: String
+    var isTransparent: Bool = false
     @Binding var show: Bool
     @State var animate = false
     
@@ -26,12 +27,12 @@ struct HUDProgressView: View {
         .cornerRadius(15)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            Color.primary.opacity(0.35)
-                .onTapGesture {
-                    withAnimation {
-                        show.toggle()
-                    }
-                }
+            Color.primary.opacity(isTransparent ? 0.1 : 0.35)
+//                .onTapGesture {
+//                    withAnimation {
+//                        show.toggle()
+//                    }
+//                }
         )
         .onAppear {
             withAnimation( Animation.linear(duration: 1.5).repeatForever(autoreverses: false)) {

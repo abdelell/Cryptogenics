@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 enum NetworkError: Error {
     case errorAddingDocument
+    case invalidFallByPercentNumber
 }
 
 enum SuccessFirebase {
@@ -61,12 +62,19 @@ class AddPriceAlertViewModel: ObservableObject {
     var target: Double {
         get {
             if selectedAlertOption.type == .percent {
-                guard let targetPercentNum = Int(targetPercent.replacingOccurrences(of: "%", with: "")) else {
+                guard let targetPercentNum = Double(targetPercent.replacingOccurrences(of: "%", with: "")) else {
                     return 0
                 }
                 let percentMultiplier = targetPercentNum / 100
                 
-                return selectedCoin.priceUSD + (selectedCoin.priceUSD * Double(percentMultiplier))
+                let percentValue = (selectedCoin.priceUSD * Double(percentMultiplier))
+                
+                if selectedAlertOption == AlertOptions.priceRisesByPercent.getAlert() {
+                    return selectedCoin.priceUSD + percentValue
+                } else {
+                    return selectedCoin.priceUSD - percentValue
+                }
+                
             } else if selectedAlertOption.type == .moneyAmount {
                 guard let targetAmountNum = Double(targetAmount.replacingOccurrences(of: "$", with: "")) else {
                     return 0
@@ -80,10 +88,16 @@ class AddPriceAlertViewModel: ObservableObject {
     }
     
     func addPriceAlert(completion:@escaping (Result<SuccessFirebase, NetworkError>) -> ()) {
+        if (selectedAlertOption == AlertOptions.priceFallsByPercent.getAlert()) && target <= 0.0 {
+            completion(.failure(.invalidFallByPercentNumber))
+            return
+        }
+        
+        
         let deviceToken = UserDefaults.standard.object(forKey:"token") as? String ?? ""
         let db = Firestore.firestore()
         
-        let priceRisesAbove = selectedAlertOption.type == AlertOptions.priceRisesAbove.getAlert().type || selectedAlertOption.type == AlertOptions.priceRisesByPercent.getAlert().type
+        let priceRisesAbove = selectedAlertOption == AlertOptions.priceRisesAbove.getAlert() || selectedAlertOption == AlertOptions.priceRisesByPercent.getAlert()
         
         db.collection("alerts")
             .document(selectedCoin.contractAddress)

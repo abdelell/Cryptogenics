@@ -11,6 +11,7 @@ import FirebaseFirestore
 class PriceAlertViewModel: ObservableObject {
     @Published var priceAlerts = [PriceAlert]()
     @Published var priceAlertsFetchComplete = false
+    @Published var timerCount = 1
     
     var priceAlertLoopNum = 0
     var numOfAlertsLocally = 0
@@ -19,16 +20,54 @@ class PriceAlertViewModel: ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(self.addNewPriceAlertNotification(notification:)), name: Notification.Name("AddedPriceAlert"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPriceAlertsNotification(notification:)), name: Notification.Name("RefreshPriceAlerts"), object: nil)
         syncLocalPriceAlertsWithServer()
-//        getPriceAlerts()
     }
     
-    func getPriceAlerts() {
-        priceAlerts.removeAll()
+    @objc func getPriceAlerts() {
+        timerCount = timerCount - 1
+        
+        guard timerCount == 0 else {
+            return
+        }
+        
+        timerCount = 15
         
         let alerts = PriceAlertUserDefaultsStore.getLocalPriceAlerts()
         
         for alert in alerts {
             addPriceAlert(alert: alert)
+        }
+    }
+    
+    private func sortPriceAlerts() {
+        let alerts = PriceAlertUserDefaultsStore.getLocalPriceAlerts()
+        
+        priceAlerts.sort {
+            guard let indexOfValue1 = alertIndex(documentId: $0.documentID),
+                  let indexOfValue2 = alertIndex(documentId: $1.documentID) else {
+                return true
+            }
+            
+            return indexOfValue1 < indexOfValue2
+        }
+        
+        func alertIndex(documentId: String) -> Int? {
+            
+            var index = -1
+            
+            for i in 0..<alerts.count {
+                let alert = alerts[i]
+                
+                guard let docId = alert["documentID"] as? String else {
+                    continue
+                }
+                
+                if documentId == docId {
+                    index = i
+                    break
+                }
+            }
+            
+            return index == -1 ? nil : index
         }
     }
     
@@ -68,7 +107,7 @@ class PriceAlertViewModel: ObservableObject {
         priceAlertsFetchComplete = true
         
         if priceAlertLoopNum == numOfAlertsLocally {
-            getPriceAlerts()
+            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getPriceAlerts), userInfo: nil, repeats: true)
         }
     }
     
@@ -89,11 +128,27 @@ class PriceAlertViewModel: ObservableObject {
                                             target: target,
                                             documentID: documentID)
                 
-                self.priceAlerts.append(priceAlert)
+                if let index = priceAlertExists(documentID: priceAlert.documentID) {
+                    self.priceAlerts[index] = priceAlert
+                } else {
+                    self.priceAlerts.append(priceAlert)
+                    self.sortPriceAlerts()
+                }
+                
             case .failure(_):
                 print("Error getting price alert coin: \(documentID)")
             }
             
+        }
+        
+        func priceAlertExists(documentID: String) -> Int? {
+            for i in 0..<priceAlerts.count {
+                if priceAlerts[i].documentID == documentID {
+                    return i
+                }
+            }
+            
+            return nil
         }
     }
     

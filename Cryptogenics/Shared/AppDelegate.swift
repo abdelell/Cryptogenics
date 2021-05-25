@@ -58,24 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
-//
-//    func setupUserInfoForNotification(userInfo: [AnyHashable: Any]) {
-//        guard let data = userInfo["aps"] as? [String: AnyObject] else {
-//          return
-//        }
-//
-//        guard let title = userInfo["title"] as? String,
-//              let body = userInfo["body"] as? String else {
-//            print("Setup notifications not working")
-////            print(userInfo)
-////            print(data)
-//            return
-//        }
-//
-//        print("\nNotification:\nTitle: \(title)\nBody: \(body)")
-////
-////        createNotification(title: title, body: body)
-//    }
+
 }
 
 // Cloud Messaging

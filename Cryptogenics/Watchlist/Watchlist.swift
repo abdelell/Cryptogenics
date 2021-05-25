@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Watchlist: View {
-    
-    @StateObject var coinManager = CoinManager()
+    @StateObject var coinViewModel = CoinViewModel()
     @State var showAddTokenPopup = false
     
     var body: some View {
@@ -17,18 +16,24 @@ struct Watchlist: View {
             NavigationView {
                 ScrollView {
                     VStack {
-                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
-                            CoinViewModel().getCoins { (coins) in
-                                self.coinManager.coins = coins
+                        if coinViewModel.coins.count != 0 {
+                            HStack {
+                                Spacer()
+                                Text("Refreshing in \(coinViewModel.timerCount)")
+                                    .italic()
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
+                                    .padding(2)
+                                Spacer()
                             }
                         }
                         
-                        ForEach(coinManager.coins) { coin in
+                        ForEach(coinViewModel.coins) { coin in
                             CoinRow(coin: coin)
                                 .padding(.horizontal)
                         }
                         
-                        if coinManager.coins.count < UserDefaultsStore.getContractAddresses().count {
+                        if coinViewModel.coins.count < UserDefaultsStore.getContractAddresses().count {
                             HStack {
                                 Spacer()
                                 ProgressView()
@@ -50,9 +55,10 @@ struct Watchlist: View {
                     }
                 }
                 .onAppear() {
-                    CoinViewModel().getCoins { (coins) in
-                        self.coinManager.coins = coins
-                    }
+//                    CoinViewModel().getCoins { (coins) in
+//                        self.coinManager.coins = coins
+//                    }
+                    
                 }
             }
             
@@ -71,15 +77,15 @@ struct Watchlist: View {
                 AddTokenView(show: $showAddTokenPopup)
             }
             
-            if coinManager.showTokenAddedView {
+            if coinViewModel.showTokenAddedView {
                 withAnimation {
-                    ItemAddedView(show: $coinManager.showTokenAddedView,
-                                  text: "\(coinManager.coinAdded?.name ?? "") Added to Watchlist")
+                    ItemAddedView(show: $coinViewModel.showTokenAddedView,
+                                  text: "\(coinViewModel.coinAdded?.name ?? "") Added to Watchlist")
                 }
             }
             
         }
-        .environmentObject(coinManager)
+        .environmentObject(coinViewModel)
         .edgesIgnoringSafeArea(.all)
         
         
