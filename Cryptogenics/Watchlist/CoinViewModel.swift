@@ -38,7 +38,7 @@ class CoinViewModel: ObservableObject {
             return
         }
         
-        timerCount = 15
+        timerCount = 30
         
         let contracts = UserDefaultsStore.getContractAddresses()
 //        let contracts = ["0xb0b924c4a31b7d4581a7f78f57cee1e65736be1d",

@@ -29,7 +29,7 @@ class PriceAlertViewModel: ObservableObject {
             return
         }
         
-        timerCount = 15
+        timerCount = 30
         
         let alerts = PriceAlertUserDefaultsStore.getLocalPriceAlerts()
         
