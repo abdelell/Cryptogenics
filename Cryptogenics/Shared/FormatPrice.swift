@@ -14,7 +14,17 @@ struct FormatPrice {
         if Int(price) > 0 {
             return "$\(price.truncate(places: 2))"
         } else {
-            let stringIntegers = "\(price)".prefix(6)
+            var stringIntegers = "\(price)".prefix(6)
+            
+            let intsBeforeE = "\(price)".split(separator: "e")[0]
+            
+            if intsBeforeE.count < 6 {
+                stringIntegers = "\(price)".prefix(intsBeforeE.count)
+            }
+            
+            if !"\(price)".contains("-") {
+                return "$\(stringIntegers)"
+            }
             
             let numOfZerosString = "\(price)".split(separator: "-")
             

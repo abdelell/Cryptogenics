@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct PriceAlertView: View {
     @StateObject var priceAlertViewModel: PriceAlertViewModel
     @State var showAddPriceAlertPopup = false
     @State var showPriceAlertAddedView = false
+    
+    // Notifications Alerts
+    @State private var showGettingNotificationStatusError = false
+    @State private var showGoToSettingsAlert = false
     
     @State var HUD: Bool = false
     
@@ -36,6 +41,10 @@ struct PriceAlertView: View {
                                 .padding(.horizontal)
                                 .padding(.bottom)
                         }
+                        .alert(isPresented: $showGettingNotificationStatusError, content: {
+                            Alert(title: Text("Error adding price alert"),
+                                  message: Text("Please try again later"))
+                        })
                         
                         if priceAlertViewModel.priceAlerts.count < PriceAlertUserDefaultsStore.getLocalPriceAlerts().count {
                             HStack {
@@ -46,20 +55,29 @@ struct PriceAlertView: View {
                                 Spacer()
                             }
                         }
+                        
                     }
                 }
                 .navigationTitle("Price Alert")
                 .toolbar {
                     ToolbarItemGroup {
                         Button(action: {
-                            withAnimation {
-                                self.showAddPriceAlertPopup = true
-                            }
+                            addPriceAlertButtonAction()
                         }) {
                             Image(systemName: "plus")
                         }
                     }
                 }
+                .alert(isPresented: $showGoToSettingsAlert, content: {
+                    Alert(title: Text("Turn notification settings on"),
+                          message: Text("To get notifications for your price alerts, you need to turn them on in your settings first."),
+                          primaryButton: .default(Text("Open iOS Settings")) {
+                            // open ios settings
+                            openiOSSettings()
+                          },
+                          secondaryButton: .default(Text("Cancel"))
+                    )
+                })
                 
             }
             
@@ -93,11 +111,57 @@ struct PriceAlertView: View {
             
         }
         .environmentObject(priceAlertViewModel)
-        .onAppear {
-            print("Price alerts: \(PriceAlertUserDefaultsStore.getLocalPriceAlerts().count)")
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            print("will enter foreground")
+            priceAlertViewModel.syncLocalPriceAlertsWithServer()
         }
+//        .onAppear {
+//            print("Price alerts: \(PriceAlertUserDefaultsStore.getLocalPriceAlerts().count)")
+//        }
+        
 //        .transition(.opacity)
 //        .animation(.linear)
+    }
+    
+    func addPriceAlertButtonAction() {
+        let center  = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+            print("Nottif ------\nError: \(error)\nGranted: \(granted)")
+            
+            guard error == nil else {
+                // Show error adding alert alert
+                self.showGettingNotificationStatusError.toggle()
+                return
+            }
+            
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+            
+            guard granted else {
+                // Show go to settings alert
+                self.showGoToSettingsAlert.toggle()
+                return
+            }
+            
+            withAnimation {
+                self.showAddPriceAlertPopup = true
+            }
+        }
+    }
+    
+    func openiOSSettings() {
+        
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                print("Settings opened: \(success)") // Prints true
+            })
+        }
     }
 }
 

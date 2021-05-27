@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
 
         let authOptions: UNAuthorizationOptions = [.alert, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-        
-        application.registerForRemoteNotifications()
+//        UNUserNotificationCenter.current().requestAuthorization(
+//            options: authOptions,
+//            completionHandler: {_, _ in })
+//        
+//        application.registerForRemoteNotifications()
         
         Messaging.messaging().delegate = self
         
@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         print("DID RECEIVE REMOTE NOTIFICATION")
+        
+        receivedPriceAlert(userInfo: userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -82,8 +84,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
         Messaging.messaging().appDidReceiveMessage(userInfo)
         print("WILL PRESENT NOTIFICATION")
-//        receivedPriceAlert(userInfo: userInfo)
-//        setupUserInfoForNotification(userInfo: userInfo)
+        
+        receivedPriceAlert(userInfo: userInfo)
         
         completionHandler([.banner, .sound])
     }
@@ -96,6 +98,29 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
         completionHandler()
+    }
+    
+    func receivedPriceAlert(userInfo: [AnyHashable: Any]) {
+        guard let data = userInfo["aps"] as? [String: AnyObject],
+              let alert = data["alert"] as? [String: String],
+              let title = alert["title"],
+              let body = alert["body"] else {
+            return
+        }
+        
+        guard let documentId = userInfo["documentId"] as? String else {
+            print("Error getting document id of notification price alert")
+            return
+        }
+        
+        PriceAlertUserDefaultsStore.deletePriceAlert(documentID: documentId)
+        
+        let documentIdDict = ["documentId": documentId]
+        
+        NotificationCenter.default.post(name: Notification.Name("DeletePriceAlerts"), object: nil, userInfo: documentIdDict)
+        
+        print("Price alert local count: \(PriceAlertUserDefaultsStore.getLocalPriceAlerts().count)")
+        print("NOTIFICATION:\nTitle: \(title)\nBody: \(body)\nDocumentId: \(documentId)")
     }
 
 }

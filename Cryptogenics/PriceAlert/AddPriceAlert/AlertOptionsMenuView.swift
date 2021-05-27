@@ -19,7 +19,7 @@ struct AlertOptionsMenuView: View {
                 Text(AlertOptions.priceRisesAbove.getAlert().title)
                 Image(systemName: "arrow.up.right.circle")
             }
-            .padding(5)
+//            .padding(5)
             
             Button {
                 priceAlertViewModel.selectedAlertOption = AlertOptions.priceFallsBelow.getAlert()
@@ -27,7 +27,7 @@ struct AlertOptionsMenuView: View {
                 Text(AlertOptions.priceFallsBelow.getAlert().title)
                 Image(systemName: "arrow.down.right.circle")
             }
-            .padding(5)
+//            .padding(5)
             
             Button {
                 priceAlertViewModel.selectedAlertOption = AlertOptions.priceRisesByPercent.getAlert()
@@ -35,7 +35,7 @@ struct AlertOptionsMenuView: View {
                 Text(AlertOptions.priceRisesByPercent.getAlert().title)
                 Image(systemName: "arrow.up.right.circle")
             }
-            .padding(5)
+//            .padding(5)
             
             Button {
                 priceAlertViewModel.selectedAlertOption = AlertOptions.priceFallsByPercent.getAlert()
@@ -43,11 +43,11 @@ struct AlertOptionsMenuView: View {
                 Text(AlertOptions.priceFallsByPercent.getAlert().title)
                 Image(systemName: "arrow.down.right.circle")
             }
-            .padding(5)
+//            .padding(5)
             
         } label: {
             Text(priceAlertViewModel.selectedAlertOption.title)
-                .padding(5)
+//                .padding(5)
             Image(systemName: "arrow.up.right.circle")
         }
     }

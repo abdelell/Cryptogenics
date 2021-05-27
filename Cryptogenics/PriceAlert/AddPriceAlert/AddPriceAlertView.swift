@@ -46,7 +46,7 @@ struct AddPriceAlertView: View {
                         }) {
                             Text("Paste")
                                 .foregroundColor(.blue)
-                                .padding(5)
+                                .padding(.horizontal, 5)
                         }
                         .alert(isPresented: $showInvalidAddress, content: {
                             Alert(title: Text("Invalid Token Address"))
@@ -55,7 +55,7 @@ struct AddPriceAlertView: View {
 
                     if isTokenValid {
                         Text("\(priceAlertViewModel.selectedCoin.name)\n\(priceAlertViewModel.selectedCoin.symbol)")
-                            .font(.title3)
+                            .font(.subheadline)
                             .bold()
                             .multilineTextAlignment(.center)
                             .onTapGesture {
@@ -105,7 +105,7 @@ struct AddPriceAlertView: View {
                                         .multilineTextAlignment(.trailing)
                                         .font(.body)
                                         .offset(x: 5)
-                                        .padding(.vertical, 5)
+//                                        .padding(.vertical, 5)
                                     Text("%")
                                         .font(.callout)
                                         .foregroundColor(priceAlertViewModel.targetPercent.count > 0 ? .white : .gray)
@@ -117,7 +117,7 @@ struct AddPriceAlertView: View {
                                     .keyboardType(.decimalPad)
                                     .multilineTextAlignment(.trailing)
                                     .font(.body)
-                                    .padding(.vertical, 5)
+//                                    .padding(.vertical, 5)
                             }
                                 
                         }
@@ -177,9 +177,7 @@ struct AddPriceAlertView: View {
             .background(
                 BackgroundDismissButton(show: $show)
             )
-            .onAppear() {
-                UIPasteboard.general.string = "0xb0b924c4a31b7d4581a7f78f57cee1e65736be1d"
-            }
+            
             if HUD {
                 HUDProgressView(placeHolder: "", show: $HUD)
                     .edgesIgnoringSafeArea(.all)

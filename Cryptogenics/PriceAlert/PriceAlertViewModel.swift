@@ -14,11 +14,15 @@ class PriceAlertViewModel: ObservableObject {
     @Published var timerCount = 1
     
     var priceAlertLoopNum = 0
-    var numOfAlertsLocally = 0
+    var numOfAlertsLocally: Int {
+        return PriceAlertUserDefaultsStore.getLocalPriceAlerts().count
+    }
+    
+    var timer: Timer?
     
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.addNewPriceAlertNotification(notification:)), name: Notification.Name("AddedPriceAlert"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPriceAlertsNotification(notification:)), name: Notification.Name("RefreshPriceAlerts"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deletePriceAlertNotification(notification:)), name: Notification.Name("DeletePriceAlerts"), object: nil)
         syncLocalPriceAlertsWithServer()
     }
     
@@ -75,8 +79,9 @@ class PriceAlertViewModel: ObservableObject {
         let db = Firestore.firestore()
         let priceAlerts = PriceAlertUserDefaultsStore.getLocalPriceAlerts()
         
-        numOfAlertsLocally = priceAlerts.count
         priceAlertLoopNum = 0
+        
+        print("Price Alerts Loop: \(priceAlerts.count)")
         
         for priceAlert in priceAlerts {
             guard let contractAddress = priceAlert["contractAddress"] as? String,
@@ -93,6 +98,13 @@ class PriceAlertViewModel: ObservableObject {
                     
                     if ((snapshot?.exists) == nil) || (data == nil)  {
                         PriceAlertUserDefaultsStore.deletePriceAlert(documentID: documentId)
+                        
+                        // Delete from priceAlerts array if it exists
+                        // used when a notification is sent while the app is in background
+                        if let index =  self.priceAlertExists(documentID: documentId) {
+                            self.priceAlerts.remove(at: index)
+                        }
+                        
                         print("Deleted \(documentId)")
                     }
                     print("Document id: \(documentId)")
@@ -101,13 +113,17 @@ class PriceAlertViewModel: ObservableObject {
                     self.checkIfEndOfLoop()
                 }
         }
+        
+        self.checkIfEndOfLoop()
     }
     
     func checkIfEndOfLoop() {
         priceAlertsFetchComplete = true
         
         if priceAlertLoopNum == numOfAlertsLocally {
-            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getPriceAlerts), userInfo: nil, repeats: true)
+            if timer == nil {
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getPriceAlerts), userInfo: nil, repeats: true)
+            }
         }
     }
     
@@ -128,11 +144,13 @@ class PriceAlertViewModel: ObservableObject {
                                             target: target,
                                             documentID: documentID)
                 
-                if let index = priceAlertExists(documentID: priceAlert.documentID) {
+                if let index = self.priceAlertExists(documentID: priceAlert.documentID) {
                     self.priceAlerts[index] = priceAlert
                 } else {
                     self.priceAlerts.append(priceAlert)
                     self.sortPriceAlerts()
+                    self.priceAlertLoopNum += 1
+                    self.syncLocalPriceAlertsWithServer()
                 }
                 
             case .failure(_):
@@ -140,16 +158,16 @@ class PriceAlertViewModel: ObservableObject {
             }
             
         }
-        
-        func priceAlertExists(documentID: String) -> Int? {
-            for i in 0..<priceAlerts.count {
-                if priceAlerts[i].documentID == documentID {
-                    return i
-                }
+    }
+    
+    func priceAlertExists(documentID: String) -> Int? {
+        for i in 0..<priceAlerts.count {
+            if priceAlerts[i].documentID == documentID {
+                return i
             }
-            
-            return nil
         }
+        
+        return nil
     }
     
     @objc func addNewPriceAlertNotification(notification: Notification) {
@@ -172,9 +190,23 @@ class PriceAlertViewModel: ObservableObject {
         }
     }
     
-    @objc func refreshPriceAlertsNotification(notification: Notification) {
-        print("ALERT: REFRESH PRICE ALERT")
-        getPriceAlerts()
+    @objc func deletePriceAlertNotification(notification: Notification) {
+        
+        guard let documentIdDict = notification.userInfo as? [String: String],
+              let documentId = documentIdDict["documentId"] else {
+            return
+        }
+                
+        print("Delete Document Id: \(documentId)")
+        
+        for i in 0..<priceAlerts.count {
+            if priceAlerts[i].documentID == documentId {
+                priceAlerts.remove(at: i)
+                return
+            }
+        }
+        
+        checkIfEndOfLoop()
     }
     
     func deletePriceAlert(priceAlert: PriceAlert, successCompletion: @escaping () -> (), failureCompletion: @escaping () -> ()) {
